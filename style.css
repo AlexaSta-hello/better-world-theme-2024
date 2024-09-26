@@ -7,3 +7,49 @@ Tags: modern, pop aesthetic, bold typography
 Author: Alexandra Staszewski
 Author URI: #
 */
+
+/* -----------------
+RESET
+--------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(200, 85%, 82%);
+}
+
+.container {
+    padding: 1.5em 16px;
+}
+
+ .nav-bar ul {
+    list-style-type: none;
+ }
+
+ .nav-bar a {
+    text-decoration: none;
+    color: hsl(0, 0%, 10%);
+ }
+
+
+.my-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-right: 2em;
+    
+}
+
+
