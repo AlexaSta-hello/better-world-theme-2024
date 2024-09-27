@@ -29,12 +29,6 @@ register_sidebar (array (
   'after_widget'    => '</div>',
 ));
   
-register_sidebar (array (
-    'name'    => 'Footer Widgets',
-    'id'      => 'footer-widgets',
-    'before_widget'   => '<div>',
-    'after_widget'    => '</div>',
-));
 
 // hier haben wir die <div>s mit "Gruppe" im WP-Backend gelöst.
 register_sidebar (array (
@@ -44,3 +38,7 @@ register_sidebar (array (
 }
   
   add_action ('widgets_init', 'register_my_widgets');
+
+
+  // Beitragsbilder aktivieren
+add_theme_support('post-thumbnails');
