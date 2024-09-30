@@ -17,19 +17,28 @@
 
         <div class="container my-header">
 
+        <a href="http://localhost:10013/"><?php bloginfo('title'); ?></a>
 
-            <nav class="nav-bar main-nav">
-                <?php wp_nav_menu( array(
-                    'theme_location' => 'header-menu',
-                    'container_class' => 'my-header-menu') ); ?>    
+            <nav>
+
+            <div class=" nav-bar burger-menu">☰</div> 
+                
+            <div class="nav-bar main-nav">
+            <?php wp_nav_menu( array(
+                'theme_location' => 'header-menu',
+                'container_class' => 'my-header-menu') ); 
+            ?>
+            </div>
+                        
             </nav>
 
-            
-
-            <!-- Header-Widgets (für Social Media Icons) -->
-            <div class="my-header-widgets">
-                <?php dynamic_sidebar('header-social'); ?>
-            </div> 
         </div>
     </header>
+
+    <script>
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+    var menu = document.querySelector('.main-nav');
+    menu.classList.toggle('active');
+    });
+    </script>
     

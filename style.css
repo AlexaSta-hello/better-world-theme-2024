@@ -8,6 +8,15 @@ Author: Alexandra Staszewski
 Author URI: #
 */
 
+/* righteous-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/righteous-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
 /* -----------------
 RESET
 --------------------*/
@@ -20,37 +29,97 @@ RESET
 
 body {
     background-color: hsl(200, 85%, 82%);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
     padding: 1.5em 16px;
 }
 
- .nav-bar ul {
+h1 {
+    font-family: 'righteous', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'righteous', Arial, Helvetica, sans-serif;
+}
+
+/* ------------
+HEADER
+--------------*/
+
+.nav-bar ul {
     list-style-type: none;
  }
 
  .nav-bar a {
-    text-decoration: none;
-    color: hsl(0, 0%, 10%);
+    color: whitesmoke;
  }
-
 
 .my-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
+    background-color: hsl(300, 1%, 27%);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    color: whitesmoke;
 }
 
-.main-nav ul {
+.my-header a {
+    color: whitesmoke;
+}
+
+.main-nav {
+    display: none;
+}
+
+.main-nav.active {
     display: flex;
 }
 
-.main-nav li {
-    margin-right: 2em;
-    
+.burger-menu {
+
+    cursor: pointer;
+    color: white;
 }
+
+@media only screen and (min-width: 576px) {
+   
+    .burger-menu {
+        display: none;
+    }
+    .main-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .main-nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .main-nav li {
+        margin-right: 2em;  
+    }
+    
+    .main-nav li:last-child {
+        margin-right: 0;
+          
+    }  
+}
+
+
+
 
 /* ------------------
 STARTSEITE
@@ -58,31 +127,86 @@ STARTSEITE
 
 #studio,
 #about,
-#events,
-#kurse {
+#projects,
+#leistungen {
     height: 100vh;
 }
 
-#studio {
-    background-color: blue;
+/*---------------
+studio*/
+
+#studio
+
+
+.studio-container {
+    background-image: url(assets/images/front-page/1920-eberhardgross.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;  
 }
 
-#studio-button-wrapper {
-    background-color: blue;
-    width: 50px;
+.studio-image-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+} 
+
+video {
+    max-width: 70%;
+    
+}
+
+#studio h1 {
+    color: whitesmoke;
+    max-width: fit-content;
+    position: relative;
+    top: 15vh;
+    left: -150px;
+    transform:rotate(-90deg);
+    font-size: 25px; 
+}
+
+.studio-button-wrapper {
+    color: hsl(300, 1%, 27%);
+    border: 0.5px grey solid;
+    border-radius: 5px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: -5px 5px 5px grey;
 }
 
 #about {
     background-color: red;
 }
 
-#events {
+#projects {
     background-color: orange;
 }
 
-#kurse {
+#leistungen {
     background-color: greenyellow;
 }
+
+@media only screen and (min-width: 576px) {
+   
+    video {
+        max-width: 80%;
+        margin-top: 10vh;  
+    }
+
+    #studio h1 {
+        top: 50vh;
+        left: -150px
+    }
+}
+
+
 
 /*-----------
 SINGLE
