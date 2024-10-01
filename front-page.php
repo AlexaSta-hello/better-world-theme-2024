@@ -13,26 +13,22 @@ get_template_part( 'template-parts/header' );
 
     <div class="studio-container">
 
-        <!-- Hole den Titel aus dem ACF -->
-    <?php $studio_title = get_field('studio_title'); ?>
-
-<h1>
-    <?php if( $studio_title ): 
-        echo esc_html($studio_title);  
-        endif; 
-    ?>
-</h1>
-
-        <?php
-        // Hole die Bild-URL mit ACF
+        <!-- Hole den Titel aus ACF -->
+        <?php 
+        $studio_title = get_field('studio_title');
+        // Hole die Bild-URL aus ACF
         $studio_image = get_field('studio_image'); 
-
-        
-
         // Hole den Button-Text und Button-Link
         $studio_button_text = get_field('studio_button_text');
         $studio_button_link = get_field('studio-button_link');
         ?>
+
+
+        <h1><?php if( $studio_title ): 
+                echo esc_html($studio_title);  
+                endif; ?>
+        </h1>
+
 
         <div class="studio-image-wrapper">
         <!-- Prüfe, ob die Bild-URL gefüllt ist -->

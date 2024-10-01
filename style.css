@@ -17,6 +17,40 @@ Author URI: #
     src: url('../assets/fonts/righteous-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
+/* Barlow */
+/* barlow-200 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../assets/fonts/barlow-v12-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* barlow-200italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 200;
+    src: url('../assets/fonts/barlow-v12-latin-200italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* barlow-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/barlow-v12-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* barlow-italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../assets/fonts/barlow-v12-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
 /* -----------------
 RESET
 --------------------*/
@@ -148,6 +182,17 @@ studio*/
     height: 100vh;  
 }
 
+#studio h1 {
+    color: whitesmoke;
+    max-width: fit-content;
+    max-height: fit-content;
+    position: relative;
+    right: 40%;
+    top: 15%;
+    transform:rotate(-90deg);
+    font-size: 25px; 
+}
+
 .studio-image-wrapper{
     width: 100%;
     display: flex;
@@ -160,19 +205,9 @@ video {
     
 }
 
-#studio h1 {
-    color: whitesmoke;
-    max-width: fit-content;
-    position: relative;
-    top: 15vh;
-    left: -150px;
-    transform:rotate(-90deg);
-    font-size: 25px; 
-}
-
 .studio-button-wrapper {
     color: hsl(300, 1%, 27%);
-    border: 0.5px grey solid;
+    border: 0.5px rgb(154, 154, 154) solid;
     border-radius: 5px;
     margin-top: 50px;
     display: flex;
@@ -193,16 +228,54 @@ video {
     background-color: greenyellow;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 768px) {
    
     video {
-        max-width: 80%;
+        max-width: 75%;
         margin-top: 10vh;  
     }
 
     #studio h1 {
-        top: 50vh;
-        left: -150px
+        right: 42%;
+        top: 25%;
+        font-size: 45px;
+    }
+
+    .studio-button-wrapper {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    #studio h1 {
+        right: 40%;
+        top: 40%;
+        font-size: 30px;
+    }
+
+    .studio-button-wrapper {
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+
+    #studio h1 {
+        right: 42%;
+        top: 45%;
+        font-size: 40px;
+    }
+
+    .studio-button-wrapper {
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    video {
+        max-width: 75%;
+        margin-top: 8vh;  
     }
 }
 
