@@ -9,8 +9,6 @@ get_template_part( 'template-parts/header' );
 <!-- Studio Section -->
 <section id="studio">
 
-    
-
     <div class="studio-container">
 
         <!-- Hole den Titel aus ACF -->
@@ -49,21 +47,92 @@ get_template_part( 'template-parts/header' );
             <?php endif; ?>
         </div>
         
-        
     </div>
 </section>
 
-<!-- Leistungen Section -->
+<!-- Leistungen Section -->    
 <section id="leistungen">
-<?php $leistungen_title = get_field('leistungen_title'); ?>
 
-<h1>
-    <?php if( $leistungen_title ): 
-        echo esc_html($leistungen_title);  
-        endif; 
-    ?>
-</h1>
+    <div class="leistungen-container">
+        <?php 
+        $leistungen_title = get_field('leistungen_title');
+        $leistungen_text = get_field('leistungen_text');
+        $leistung1 = get_field ('leistung1');
+        $leistung2 = get_field ('leistung2');
+        $leistung3 = get_field ('leistung3');
+        $leistung4 = get_field ('leistung4');
+        $leistung5 = get_field ('leistung5');
+        $leistung6 = get_field ('leistung6');
+        $leistungen_button_link = get_field('leistungen_button_link');
+        $leistungen_button_text = get_field('leistungen_button_text');
+        $leistungen_image = get_field('leistungen_image'); 
+        ?>
+
+        <div class="text-field">
+            <h2>
+                <?php if( $leistungen_title ): 
+                    echo esc_html($leistungen_title);  
+                endif; ?>
+            </h2>
+
+            <p class="text">
+                <?php if ( $leistungen_text ) :
+                    echo esc_html($leistungen_text);
+                endif; ?>
+            </p>
+            
+            
+            <h3>
+                <?php if ( $leistung1 ) :
+                        echo esc_html($leistung1);
+                endif; ?> 
+            </h3>
+        
+            <h3>
+                <?php if ( $leistung2 ) :
+                        echo esc_html($leistung2);
+                endif; ?> 
+            </h3>
+        
+            <h3>
+                <?php if ( $leistung3 ) :
+                        echo esc_html($leistung3);
+                endif; ?> 
+            </h3>
+        
+            <h3>
+                <?php if ( $leistung4 ) :
+                        echo esc_html($leistung4);
+                endif; ?> 
+            </h3>
+        
+            <h3>
+                <?php if ( $leistung5 ) :
+                        echo esc_html($leistung5);
+                endif; ?> 
+            </h3>
+
+            <div class="leistungen-button-wrapper">
+            <!-- Prüfe, ob der Button-Text und der Button-Link gefüllt sind -->
+            <?php if ( $leistungen_button_text && $leistungen_button_link ): ?>
+                <a href="<?php echo esc_url($leistungen_button_link); ?>" class="leistungen-button-text">
+                    <?php echo esc_html($leistungen_button_text); ?>
+                </a>
+            <?php endif; ?>
+        </div>
+                
+            
+        </div>
+
+        <div class="leistungen-image">
+            <?php if ( $leistungen_image ) : ?>
+                <img src="<?php echo esc_url($leistungen_image);?>" alt="Webentwicklerin: Beratung & Website">
+            <?php endif; ?>      
+        </div>
+    </div>
 </section>
+
+
 
 
 
