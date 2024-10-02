@@ -71,30 +71,56 @@ body {
 }
 
 h1 {
-    font-family: 'righteous', Arial, Helvetica, sans-serif;
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-style: italic;
     color: whitesmoke;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    color: hsl(300, 1%, 27%);
+    font-size: 22px;
+    margin-bottom: 1.5em;
 }
 
 h2 {
-    font-family: 'righteous', Arial, Helvetica, sans-serif;
-    color: hsl(300, 1%, 27%);
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 h3 {
-    font-family: 'Barlow', sans-serif; /* Ruft die Barlow-Schriftart auf */
-    font-weight: 400; /* Normales Gewicht (Regular) */
-    margin-bottom: 0.5em;
-    
+    font-size: 20px;
+    font-weight: 400;
 }
 
 a {
     text-decoration: none;
     color: whitesmoke;
-    font-family: 'righteous', Arial, Helvetica, sans-serif;
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 p {
-    margin-bottom: 0.5em;
+    font-size: 18px;
+    font-family: 'poppins', sans-serif; 
+    font-weight: 200; 
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+    color: hsl(300, 1%, 27%);
+    border: 0.5px rgb(154, 154, 154) solid;
+    border-radius: 5px;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: -5px 5px 5px grey;
+   
+
 }
 
 /* ------------
@@ -127,10 +153,12 @@ HEADER
 
 .main-nav {
     display: none;
+    
 }
 
 .main-nav.active {
     display: flex;
+   
 }
 
 .burger-menu {
@@ -174,75 +202,116 @@ HEADER
 STARTSEITE
 -------------------*/
 
-#studio,
-#about,
+#banner,
+#leistungen,
 #projects,
-#leistungen {
-    height: 100vh;
+#about
+ {
+    min-height: 100vh;
 } 
 
-/*---------------
-studio*/
 
+/*--- #banner ---*/
 
-
-.studio-container {
-    background-image: url(assets/images/front-page/1920-eberhardgross.jpg);
-    background-repeat: no-repeat;
+#banner {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    height: 100vh;  
+    justify-content: center;  
 }
 
-#studio h1 {
-    color: whitesmoke;
-    max-width: fit-content;
-    max-height: fit-content;
-    position: relative;
-    right: 40%;
-    top: 15%;
-    transform:rotate(-90deg);
-    font-size: 25px; 
+.banner-container {
+    display: flex;    
 }
 
-.studio-image-wrapper{
+.banner-wrapper{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;    
 } 
 
-video {
-    max-width: 70%;
-    
+.video {
+    max-width: 70%;   
 }
 
-.studio-button-wrapper {
-    color: hsl(300, 1%, 27%);
-    border: 0.5px rgb(154, 154, 154) solid;
-    border-radius: 5px;
-    margin-top: 50px;
-    margin-bottom: 100px;
+
+/*--- slogan ---*/
+
+#slogan {
+    min-height: 30vh;
+    background-color: red;
     display: flex;
     justify-content: center;
-    padding: 15px;
-    box-shadow: -5px 5px 5px grey;
-
-}
-
-/*---------------
-leistungen*/
-
-#leistungen {
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
+.slogan-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+
+    
+}
+
+#slogan h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+#femme {
+    position: relative;
+    opacity: 0;
+}
+
+#web {
+    position: relative;
+    opacity: 0;
+}
+
+@keyframes vonlinks {
+    from {
+        left: -500px;
+        opacity: 0;
+    }
+    to {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes vonrechts {
+    from {
+        right: -500px;
+        opacity: 0;
+    }
+    to {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+.animated-left {
+    animation: vonlinks 2s ease-out forwards;
+}
+
+.animated-right {
+    animation: vonrechts 2s ease-out forwards;
+}
+
+
+
+/*--- leistungen ---*/
+
+#leistungen {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
 .leistungen-container {
-    background-color: greenyellow;
+    background-color: whitesmoke;
     border-radius: 10px;
     width: 90%;
     display: flex;
@@ -250,102 +319,100 @@ leistungen*/
     justify-content: space-between;
     flex-wrap: wrap;
     box-shadow: -5px 5px 5px grey;
-    
+    margin: 2em 2em 50px 2em;
 }
 
 #leistungen .text-field {
-    
     line-height: 1.5em;
     color: hsl(300, 1%, 27%);
     width: 100%;
     margin: 2em 2em;
 }
 
-#leistungen h2 {
-    font-size: 22px;
-    margin-bottom: 0.5em;
-}
-
-#leistungen p {
-    font-size: 18px;
-    font-family: 'Barlow', sans-serif; /* Ruft die Barlow-Schriftart auf */
-    font-weight: 200; /* Normales Gewicht (Regular) */
-    text-align: justify;
-    line-height: 1.5em;
-    margin: 1.5em 0;
-}
-
 .leistungen-image {
     display: none;
 }
 
-#leistungen h2 {
-    font-size: 18px;
-}
-
 #leistungen h3 {
-    font-size: 18px;
-    margin-bottom: 1.5em;
+    margin-bottom: 0em;
+    margin-top: 1.5em;
     line-height: 1.3em;
-    text-align: center;
 }
 
-.leistungen-button-wrapper {
-    border: 0.5px rgb(154, 154, 154) solid;
-    border-radius: 5px;
-    background-color: whitesmoke;
-    padding: 15px;
-    box-shadow: -5px 5px 5px grey;
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-}
 
 .leistungen-button-text {
     color: hsl(300, 1%, 27%);
 }
 
+/*-------------
+projects*/
 
+#projects {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.project-container {
+    margin: 2em 2em 50px 2em;
+    width: 90%; 
+}
+
+.project-content p {
+    margin-bottom: 0.5em; 
+}
+
+.project-item {
+    margin-bottom: 2em;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-thumbnail {
+    margin-bottom: 1em;
+}
 
 #about {
     background-color: red;
 }
 
-#projects {
-    background-color: orange;
-}
+
 
 
 
 @media only screen and (min-width: 768px) {
    
-    video {
+    .video {
         max-width: 75%;
-        margin-top: 10vh;  
-    }
-
-    #studio h1 {
-        right: 42%;
-        top: 25%;
-        font-size: 45px;
+        margin-top: 8vh;  
     }
 
     .studio-button-wrapper {
         font-size: 20px;
     }
 
+    #slogan h1 {
+        font-size: 50px;
+    }
+
+    .leistungen-container {
+        width: 85%;
+        align-items: center;
+    }
+
     #leistungen .text-field {
-    
-        line-height: 1.5em;
-        color: hsl(300, 1%, 27%);
-        width: 45%;
+        width: 40%;
         margin-left: 5%;
         margin-top: 2em;
     }
 
     .leistungen-image {
+        display: inline;
         width: 45%;
-        min-width: 300px;
+        min-width: 250px;
         height: auto;
         margin-right: 5%;
     }
@@ -353,34 +420,27 @@ leistungen*/
 
 @media only screen and (min-width: 992px) {
 
-    #studio h1 {
-        right: 40%;
-        top: 40%;
-        font-size: 30px;
-    }
-
     .studio-button-wrapper {
         margin-top: 25px;
+        position: relative;
+        bottom: 40px;
     }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1200px) {
 
-    #studio h1 {
-        right: 42%;
-        top: 45%;
-        font-size: 40px;
+    .studio-container {
+        position: relative;
+        bottom: 15vh;
     }
 
     .studio-button-wrapper {
         font-size: 30px;
-        margin-top: 20px;
-        margin-bottom: 10px;
+        margin-top: 20px;  
     }
 
-    video {
+    .video {
         max-width: 75%;
-        margin-top: 8vh;  
     }
 }
 

@@ -43,3 +43,11 @@ register_sidebar (array (
 
   // Beitragsbilder aktivieren
 add_theme_support('post-thumbnails');
+
+
+// JS Datei für Animationen einbinden
+function enqueue_slogan_animation_script() {
+  wp_enqueue_script( 'slogan-animations', get_template_directory_uri() . '/js/slogan-animations.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_slogan_animation_script' );
+
