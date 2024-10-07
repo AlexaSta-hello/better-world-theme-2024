@@ -12,8 +12,6 @@ get_template_part( 'template-parts/header' );
 <!-- Banner Section -->
     <section id="banner">
 
-        <div class="banner-container">
-
             <?php
             // Hole den Button-Text und Button-Link
             $banner_button_text = get_field('banner_button_text');
@@ -23,7 +21,7 @@ get_template_part( 'template-parts/header' );
             <div class="banner-wrapper">
                 
                 <?php the_content();?>
-                <div class="banner-button">
+                <div class="cta-button banner-button">
                     <!-- Prüfe, ob der Button-Text und der Button-Link gefüllt sind -->
                     <?php if ( $banner_button_text && $banner_button_link ): ?>
                         <a href="<?php echo esc_url($banner_button_link); ?>">
@@ -34,7 +32,6 @@ get_template_part( 'template-parts/header' );
 
             </div>
     
-        </div>
     </section>
 
 
@@ -75,32 +72,23 @@ get_template_part( 'template-parts/header' );
             ?>
 
             <div class="text-field">
-                <h2><?php if( $leistungen_title ): echo esc_html($leistungen_title); endif; ?>
-                </h2>
+                <h2><?php if( $leistungen_title ): echo esc_html($leistungen_title); endif; ?></h2>
 
-                <p class="text"><?php if ( $leistungen_text ) : echo esc_html($leistungen_text); endif; ?>
-                </p>
+                <p class="text"><?php if ( $leistungen_text ) : echo esc_html($leistungen_text); endif; ?></p>
                 
-                <h3><?php if ( $leistung1 ) : echo esc_html($leistung1); endif; ?> 
-                </h3>
+                <h3><?php if ( $leistung1 ) : echo esc_html($leistung1); endif; ?> </h3>
             
-                <h3><?php if ( $leistung2 ) : echo esc_html($leistung2); endif; ?> 
-                </h3>
+                <h3><?php if ( $leistung2 ) : echo esc_html($leistung2); endif; ?> </h3>
             
-                <p><?php if ( $leistung2_text ) : echo esc_html($leistung2_text); endif; ?> 
-                </p>
+                <p><?php if ( $leistung2_text ) : echo esc_html($leistung2_text); endif; ?> </p>
             
-                <h3><?php if ( $leistung3 ) : echo esc_html($leistung3); endif; ?> 
-                </h3>
+                <h3><?php if ( $leistung3 ) : echo esc_html($leistung3); endif; ?> </h3>
             
-                <p><?php if ( $leistung3_text ) : echo esc_html($leistung3_text); endif; ?> 
-                </p>
+                <p><?php if ( $leistung3_text ) : echo esc_html($leistung3_text); endif; ?> </p>
 
-                <h3><?php if ( $leistung4 ) : echo esc_html($leistung4); endif; ?> 
-                </h3>
+                <h3><?php if ( $leistung4 ) : echo esc_html($leistung4); endif; ?> </h3>
 
-                <h3><?php if ( $leistung5 ) : echo esc_html($leistung5); endif; ?> 
-                </h3>    
+                <h3><?php if ( $leistung5 ) : echo esc_html($leistung5); endif; ?> </h3>    
                 
             </div>
 
@@ -110,7 +98,7 @@ get_template_part( 'template-parts/header' );
                 <?php endif; ?>      
             </div>
 
-            <div class="cta-button leistungen-button-wrapper">
+            <div class="cta-button">
                 <!-- Prüfe, ob der Button-Text und der Button-Link gefüllt sind -->
                 <?php if ( $leistungen_button_text && $leistungen_button_link ): ?>
                     <a href="<?php echo esc_url($leistungen_button_link); ?>" class="leistungen-button-text">
@@ -181,7 +169,7 @@ get_template_part( 'template-parts/header' );
                   $fp_project_button_text = get_field('fp_project_button_text'); ?>
                 <!-- Prüfe, ob der Button-Text und der Button-Link gefüllt sind -->
                 <?php if ( $fp_project_button_text && $fp_project_button_link ): ?>
-                    <a href="<?php echo esc_url($fp_project_button_link); ?>" class="fp-project-button-text">
+                    <a href="<?php echo esc_url($fp_project_button_link); ?>">
                         <?php echo esc_html($fp_project_button_text); ?>
                     </a>
             <?php endif; ?>
@@ -197,20 +185,10 @@ get_template_part( 'template-parts/header' );
 <!-- About Section -->
     <section id="about">
 
-        <div class="about-container fp-container">
+        <div class="about-container">
             <!-- Hole den Titel aus dem ACF -->
-            <?php $about_title = get_field('about_title'); ?>
-
-            <h1>
-                <?php if( $about_title ): 
-                    echo esc_html($about_title);  
-                    endif; 
-                ?>
-            </h1>
-
-        
-
-            <?php
+            <?php $about_title = get_field('about_title');
+            
             // Hole die Bild-URL aus ACF
             $about_image = get_field('about_image'); 
 
@@ -219,36 +197,48 @@ get_template_part( 'template-parts/header' );
 
             // Hole den Button-Text und Button-Link
             $about_button_text = get_field('about_button_text');
-            $about_button_link = get_field('about-button_link');
+            $about_button_link = get_field('about_button_link');
             ?>
 
             <div class="about-text-wrapper">
-                <?php if($about_text) : 
-                    echo esc_html($about_button_text); 
-                    endif; 
-                ?>
 
-                <div class="about-button-wrapper">
+                <h2>
+                    <?php if( $about_title ): 
+                        echo esc_html($about_title);  
+                        endif; 
+                    ?>
+                </h2>
+
+                <h3>
+                    <?php if($about_text) : 
+                        echo esc_html($about_text); 
+                        endif; 
+                    ?>
+                </h3>
+
+                <div class="cta-button">
                     <!-- Prüfe, ob der Button-Text und der Button-Link gefüllt sind -->
                     <?php if ( $about_button_text && $about_button_link ): ?>
-                        <a href="<?php echo esc_url($about_button_link); ?>" class="about-cta-button">
+                        <a href="<?php echo esc_url($about_button_link); ?>">
                             <?php echo esc_html($about_button_text); ?>
                         </a>
                     <?php endif; ?>
-            </div>
+                </div>
 
             </div>
 
             <div class="about-image-wrapper">
-            <!-- Prüfe, ob die Bild-URL gefüllt ist -->
+                <!-- Prüfe, ob die Bild-URL gefüllt ist -->
                 <?php if( $about_image ): ?>
                     
-                    <img src="<?php echo esc_url($about_image); ?>" alt="Weibliche Webdesignerin Webentwicklerin" class="studio-image"/>
+                    <img src="<?php echo esc_url($about_image); ?>" alt="Webdesignerin Webentwicklerin" class="studio-image"/>
                 
                 <?php endif; ?>
-            </div>  
+            </div>
             
-        </div>
+             
+            
+        </div> 
             
     </section>
 
