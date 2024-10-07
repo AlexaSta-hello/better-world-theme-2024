@@ -11,7 +11,7 @@
 
 <body <?php body_class(); ?>>
     
-<div class="main-wrapper">
+
 
     <header>
 
@@ -41,4 +41,6 @@
     menu.classList.toggle('active');
     });
     </script>
+
+<div class="main-wrapper">
     

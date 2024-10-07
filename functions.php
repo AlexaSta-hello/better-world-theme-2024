@@ -51,3 +51,8 @@ function enqueue_slogan_animation_script() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_slogan_animation_script' );
 
+function enqueue_slogan_projects_animation_script() {
+  wp_enqueue_script( 'slogan-projects-animations', get_template_directory_uri() . '/js/slogan-projects-animations.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_slogan_projects_animation_script' );
+
