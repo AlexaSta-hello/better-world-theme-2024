@@ -7,11 +7,10 @@ get_template_part( 'template-parts/header' );
 
 <main id="projects-page">
 
-  <div class="fp-container">
+  <div class="p-container">
   
     <div class="projects-wp-all">
       <h1><?php the_title(); ?></h1>
-          <hr>
       <?php the_content(); ?>
     </div>
   </div>
@@ -34,7 +33,7 @@ get_template_part( 'template-parts/header' );
         
   
   
-  <div class="fp-container">
+  <div class="p-container">
       <?php
       // WP Query für alle Projekt-Posts
       $args = array(
@@ -51,25 +50,26 @@ get_template_part( 'template-parts/header' );
           while($projects_query->have_posts()) : $projects_query->the_post();
         ?>
 
-          
-
+          <div>
             <div class="project-text-box">
-            <a href="<?php the_permalink(); ?>">
-              <div>
-                <h2><?php the_title(); ?></h2>
-                <?php the_excerpt(); ?>
+              <a href="<?php the_permalink(); ?>">
+                <div>
+                  <h2><?php the_title(); ?></h2>
+                  <?php the_excerpt(); ?>
+                </div>
+                
+              </a>
               </div>
-              
-            </a>
-            </div>
 
-            <div class="project-thumbnail-box">
-              <?php 
-              if (has_post_thumbnail()) {
-                  the_post_thumbnail('medium'); // Anzeige des Vorschaubildes
-                } 
-              ?>
-            </div>
+              <div class="project-thumbnail-box">
+                <?php 
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail('medium'); // Anzeige des Vorschaubildes
+                  } 
+                ?>
+              </div>
+          </div>
+            
           
         <?php
           endwhile; ?>

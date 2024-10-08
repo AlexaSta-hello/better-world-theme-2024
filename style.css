@@ -103,7 +103,6 @@ body {
 h1 {
     font-family: 'nunito', Arial, Helvetica, sans-serif;
     font-weight: 800;
-    font-style: italic;
     color: hsl(300, 1%, 27%);
     text-transform: uppercase;
     font-size: 22px;
@@ -353,6 +352,7 @@ STARTSEITE
     font-size: 30px;
     text-align: center;
     color: whitesmoke;
+    font-style: italic;
 }
 
 #femme {
@@ -549,7 +549,7 @@ PAGE PROJECTS
 ------------*/
 
 #projects-page {
-    background-color: #ffa500;
+    
     position: relative;
     z-index: 3;
     display: flex;
@@ -557,14 +557,25 @@ PAGE PROJECTS
     align-items: center;    
 }
 
-#projects-page .fp-container {
+.p-container {
+    max-width: 1200px;
+    background-color: whitesmoke;
+    padding: 5%;
     margin-bottom: 0;
-    margin-top: 0;
+}
+
+
+.p-container h1 {
+    font-size: 50px;
+    padding: 0.5em;
+    margin: 2em 0;
+    color: whitesmoke;
+    
 }
 
 #projects-page h1 {
-    padding-left: 1em;
-    padding-top: 0.5em;
+    background-color: orange;
+  transform: skewY(15deg);
 }
 
 .projects-wp-all {
@@ -576,15 +587,6 @@ PAGE PROJECTS
     display: none;
 }
 
-hr {
-    border: 3px solid red;
-    margin-top: 3px;
-}
-
-.projects-text {
-   
-    padding: 1.5em;
-}
 
 #slogan-projects {
     min-height: 25vh;
@@ -593,6 +595,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5em; 
 }
 
 .slogan-container-projects {
@@ -600,7 +603,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em 0; 
+    padding: 2em 0;
 }
 
 #slogan-projects h2 {
@@ -627,6 +630,10 @@ hr {
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: whitesmoke;
+}
+
+#projects-page .projects-loop-container > div {
+    margin-bottom: 4em;
 }
 
 
@@ -711,29 +718,46 @@ hr {
 
     /* projects-page*/
 
+    .p-container h1 {
+        font-size: 80px;
+        padding: 0.5em;
+        margin: 2em 0;
+    }
+    
+    #projects-page h1 {
+        transform: skewY(10deg);
+    }
+
     .projects-wp-content {
         display: flex;
         justify-content: space-between;
-        gap: 1% 
+        align-items: flex-start;
+        gap: 1%;
+        position: relative;
+        top: -2em;  
     }
 
     .projects-image-wrapper {
         display: flex;
-        width: 48%;
+        width: 38%;
         object-fit: cover;
+        position: relative;
+        top: -4em;
     }
 
-    .projects-image img {
-        width: 100%;
-    }
-    
     .projects-text {
-        width: 48%;
+        width: 58%;
         padding: 2em;
         background-color:inherit;
         border-radius: 0px;
         border: none;
     }
+
+
+    .projects-image img {
+        width: 100%;
+    }
+    
 
     .project-text-box,
     .project-thumbnail-box {
@@ -746,6 +770,16 @@ hr {
 
      h1 {
         font-size: 50px;
+    }
+
+    .p-container h1 {
+        font-size: 100px;
+        padding: 0.5em;
+        margin: 1.5em 0;
+    }
+
+    .projects-wp-content {
+        top: 0;
     }
   
 }
