@@ -51,6 +51,39 @@ Author URI: #
     src: url('../assets/fonts/barlow-v12-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
+  /* nunito-sans-200 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../assets/fonts/nunito-sans-v15-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-sans-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/nunito-sans-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-sans-800 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../assets/fonts/nunito-sans-v15-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* nunito-sans-800italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Nunito Sans';
+    font-style: italic;
+    font-weight: 800;
+    src: url('../assets/fonts/nunito-sans-v15-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
 /* -----------------
 RESET
 --------------------*/
@@ -62,14 +95,13 @@ RESET
 }
 
 body {
-    background-image: url('assets/images/front-page/1920-eberhardgross.jpg');
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
     
 }
 
 
 h1 {
-    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    font-family: 'nunito', Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: italic;
     color: hsl(300, 1%, 27%);
@@ -78,14 +110,14 @@ h1 {
 }
 
 h2, h3 {
-    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    font-family: 'nunito', Arial, Helvetica, sans-serif;
     color: hsl(300, 1%, 27%);
     font-size: 18px;
     margin-bottom: 2em;
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
@@ -102,7 +134,7 @@ a {
 
 p {
     font-size: 18px;
-    font-family: 'poppins', sans-serif; 
+    font-family: 'poppins', Arial, Helvetica, sans-serif; 
     font-weight: 200; 
     line-height: 1.5em;
     margin-bottom: 1.5em;
@@ -228,7 +260,23 @@ HEADER
     }  
 }
 
+/* ------------
+Footer
+--------------*/
 
+.footer-wrapper {
+    background-color: hsl(300, 1%, 27%);
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 7;
+}
+.my-footer {
+    max-width: 1200px;
+
+
+}
 
 
 /* ------------------
@@ -250,6 +298,10 @@ STARTSEITE
     border-radius: 10px 10px 0 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 5%;
+}
+
+.font {
+    display: none;
 }
 
 
@@ -351,7 +403,9 @@ STARTSEITE
 
 #leistungen {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: blue;
     width: 100%;
 }
@@ -388,10 +442,12 @@ STARTSEITE
 
 #projects {
     background-color: orange; 
-    width: 100%;
+    width: 100vw;
     display: flex; 
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 3;
 }
 
 
@@ -425,20 +481,19 @@ about*/
 
 #about {
     background-color: red;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 5;
 }
 
 #about h2 {
     font-size: 30px; 
-    color: whitesmoke;
+    
 }
 
-#about h3 {
-    color: whitesmoke;
-}
 
 .about-image-wrapper {
     width: 100%;
@@ -465,11 +520,23 @@ about*/
 }
 
 .about-text-wrapper {
-    max-width: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 12%;
+    left: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.about-text-wrapper h2 {
+    margin-bottom: 0.5em;
+}
+
+.about-button {
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
 }
 
 
@@ -483,6 +550,16 @@ PAGE PROJECTS
 
 #projects-page {
     background-color: #ffa500;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+#projects-page .fp-container {
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 #projects-page h1 {
@@ -490,20 +567,9 @@ PAGE PROJECTS
     padding-top: 0.5em;
 }
 
-.projects-container {
-   padding: 80px 0;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
-   
-}
-
 .projects-wp-all {
     background-color: whitesmoke;
     border-radius: 5% 40% 0% 0%;
-    width: 90%;
 }
 
 .projects-image-wrapper {
@@ -523,7 +589,7 @@ hr {
 #slogan-projects {
     min-height: 25vh;
     background-color: blue;
-    width: 100%;
+    width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -534,11 +600,10 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em 0;  
+    padding: 2em 0; 
 }
 
 #slogan-projects h2 {
-    font-size: 30px;
     font-style: italic;
     text-align: center;
     color: whitesmoke;
@@ -613,9 +678,11 @@ hr {
         font-size: 20px;
     }
 
+    #slogan h1,
     #leistungen h2,
     #projects h2,
-    #about h2 {  
+    #about h2,
+    .slogan-container-projects h2{  
         font-size: 50px;
         line-height: 1.3em;
     }
@@ -624,13 +691,6 @@ hr {
     #projects .cta-button {
         margin: 100px 0 0 auto;
         margin-left: auto;
-    }
-
-
-
-    #slogan h1 {
-        font-size: 50px;
-        color: whitesmoke;
     }
 
     .leistungen-container {
@@ -709,12 +769,83 @@ hr {
         margin-bottom: 0;
         margin-right: 6%;
     }
-
-   
-
    
 }
 
+@media only screen and (min-width: 1400px){
+
+    .fp-container,
+    .about-container {
+        margin-top: -1em;
+    }
+
+    .font {
+        display: block;
+    }
+
+    .font-leistungen {
+        position: sticky;
+        top: 0;
+        transform: rotate(-90deg) translateX(50%) translateX(-170%)
+            translateY(-435px);
+        transform-origin: left top;
+        z-index: 2; 
+    }
+
+    .font-projekte {
+        position: sticky;
+        top: 0;
+        transform: rotate(-90deg) translateX(50%) translateX(-173%)
+            translateY(-485px);
+        transform-origin: left top;
+        z-index: 4; 
+    }
+
+    .font-about {
+        position: sticky;
+        top: 0;
+        transform: rotate(-90deg) translateX(50%) translateX(-186%)
+            translateY(-565px);
+        transform-origin: left top;
+        z-index: 6; 
+    }
+
+    .font h2 {
+        font-size: 90px !important;
+        color: whitesmoke;
+        margin-bottom: 0 !important;
+    }
+
+
+
+    
+} 
+
+@media only screen and (min-width: 1600px){
+
+    .font-leistungen {
+        transform: rotate(-90deg) translateX(50%) translateX(-170%)
+            translateY(-450px);
+    }
+
+    .font-projekte {
+        transform: rotate(-90deg) translateX(50%) translateX(-173%)
+            translateY(-500px);
+    }
+
+    .font-about {
+        transform: rotate(-90deg) translateX(50%) translateX(-185%)
+            translateY(-588px);
+    }
+
+    .font h2 {
+        font-size: 100px !important;
+        color: whitesmoke;
+        margin-bottom: 0 !important;
+    }
+
+    
+} 
 
 
 

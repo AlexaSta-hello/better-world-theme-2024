@@ -7,13 +7,13 @@ get_template_part( 'template-parts/header' );
 
 <main id="projects-page">
 
-  <div class="projects-container">
-
+  <div class="fp-container">
   
-  <div class="projects-wp-all">
-    <h1><?php the_title(); ?></h1>
-        <hr>
-    <?php the_content(); ?>
+    <div class="projects-wp-all">
+      <h1><?php the_title(); ?></h1>
+          <hr>
+      <?php the_content(); ?>
+    </div>
   </div>
 
 
@@ -34,7 +34,7 @@ get_template_part( 'template-parts/header' );
         
   
   
-
+  <div class="fp-container">
       <?php
       // WP Query für alle Projekt-Posts
       $args = array(
@@ -78,7 +78,7 @@ get_template_part( 'template-parts/header' );
         <?php  wp_reset_postdata(); else : ?>
             <p>Keine Projekte gefunden.</p>
         <?php endif; ?>
-      
+    </div>  
    
 
   </div>

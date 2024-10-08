@@ -52,8 +52,14 @@ get_template_part( 'template-parts/header' );
 
 
 
-<!-- Leistungen Section -->    
+<!-- Leistungen Section -->   
+    
     <section id="leistungen">
+    
+    <div class="font font-leistungen">
+        <h2>LEISTUNGEN</h2>
+    </div>
+    
 
         <div class="leistungen-container fp-container">
             <?php 
@@ -111,11 +117,15 @@ get_template_part( 'template-parts/header' );
     </section>
 
 <!-- Projekte Section -->
-    <section id="projects">
+    <section>
         
-        
-    <div class="fp-container">
-        <h2>Was bisher geschah ...</h2>
+    <div id="projects">
+
+    <div class="font font-projekte">
+        <h2>PROJEKTE</h2>
+    </div>
+        <div class="fp-container">
+        <h2>projekte</h2>
 
         <?php
         // WP Query für die letzten 2 Projekte aus der Kategorie "projects"
@@ -161,9 +171,6 @@ get_template_part( 'template-parts/header' );
             <?php endif; ?>
         </div>
 
-
-        
-
         <div class="cta-button project-button-wrapper">
             <?php $fp_project_button_link = get_field('fp_project_button_link');
                   $fp_project_button_text = get_field('fp_project_button_text'); ?>
@@ -175,7 +182,9 @@ get_template_part( 'template-parts/header' );
             <?php endif; ?>
         </div>
 
-    </div>
+        </div>
+    </div>  
+    
     </section>
 
 
@@ -183,7 +192,13 @@ get_template_part( 'template-parts/header' );
 
 
 <!-- About Section -->
-    <section id="about">
+    <section>
+
+    <div id="about">
+
+        <div class="font font-about">
+            <h2>ABOUT</h2>
+        </div>
 
         <div class="about-container">
             <!-- Hole den Titel aus dem ACF -->
@@ -216,7 +231,9 @@ get_template_part( 'template-parts/header' );
                     ?>
                 </h3>
 
-                <div class="cta-button">
+            </div>
+
+            <div class="cta-button about-button">
                     <!-- Prüfe, ob der Button-Text und der Button-Link gefüllt sind -->
                     <?php if ( $about_button_text && $about_button_link ): ?>
                         <a href="<?php echo esc_url($about_button_link); ?>">
@@ -224,8 +241,6 @@ get_template_part( 'template-parts/header' );
                         </a>
                     <?php endif; ?>
                 </div>
-
-            </div>
 
             <div class="about-image-wrapper">
                 <!-- Prüfe, ob die Bild-URL gefüllt ist -->
@@ -239,7 +254,7 @@ get_template_part( 'template-parts/header' );
              
             
         </div> 
-            
+    </div>        
     </section>
 
 
