@@ -3,8 +3,6 @@
 get_template_part( 'template-parts/header' );
 ?>
 
-<!-- Hier werden alle Events aus Beiträgen mit Kategorie event geladen -->
-
 <main id="projects-page">
 
   <div class="p-container">
@@ -32,7 +30,7 @@ get_template_part( 'template-parts/header' );
   </section>
         
   
-  
+  <!-- Hier werden alle Events aus Beiträgen mit Kategorie projects geladen -->
   <div class="p-container">
       <?php
       // WP Query für alle Projekt-Posts
