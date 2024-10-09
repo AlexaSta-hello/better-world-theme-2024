@@ -1,5 +1,5 @@
 <?php
-// Header einbinden aus dem template-parts-Ordner
+/* Template Name: My Front Page */
 get_template_part( 'template-parts/header' );
 ?>
 
