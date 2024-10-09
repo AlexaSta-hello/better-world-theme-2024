@@ -1,10 +1,10 @@
 <?php
 
 function register_my_styles () {
-    wp_enqueue_style( 
-      'bw-main-style', 
-      get_stylesheet_uri(),
-    wp_get_theme()->get ('Version'));
+    wp_enqueue_style( 'bw-main-style', get_stylesheet_uri());
+    wp_enqueue_style( 'nunito-sans-font', get_template_directory_uri() . '/assets/fonts/nunito-sans/font-style.css' );
+    wp_enqueue_style( 'righteous-font', get_template_directory_uri() . '/assets/fonts/righteous/font-style.css' );
+    wp_get_theme()->get ('Version');
 }
 
 add_action('wp_enqueue_scripts', 'register_my_styles');
