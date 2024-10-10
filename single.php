@@ -2,49 +2,47 @@
 get_template_part( 'template-parts/header' );
 ?>
 
-<main>
+<main id="my-post">
 
-<div class="container">
+<div class="p-container">
 
-    <article class="my-post-content" id="post-<?php the_ID() ?>">
-
-        <?php if ( have_posts() ) :
-            while ( have_posts() ) : the_post();
+    <?php if ( have_posts() ) :
+                while ( have_posts() ) : the_post();
         ?>
-        <header class="post-header">
-            <h1 class="post-title"><?php the_title() ?></h1>
-        </header>
 
-        <div class="post-content">
-            <!-- Beitragsbild -->
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="post-thumbnail">
-                 <?php the_post_thumbnail(); ?>   
+        <div id="post-<?php the_ID() ?>">
+
+            <header class="post-header">
+                <h1 class="post-title"><?php the_title() ?></h1>
+            </header>
+
+            <div class="s-container">
+                <div class="my-post-content">
+                    
+                    <!-- WP-Content -->
+                    <div class="post-description">
+                        <?php the_content(); ?>
+
+                    </div> 
                 </div>
-            <?php endif; ?>
-            <!-- Veranstaltungtext -->
-             <div class="post-description">
-                <?php the_content(); ?>
-             </div>
-             <!-- Zusätzliche Felder für die Veranstaltung -->
-            <div class="event-details">
-                <p><strong>Datum:</strong> <?php the_field('event_date'); ?></p> <!-- Beispiel für ein Custom Field -->
-                <p><strong>Ort:</strong> <?php the_field('event_ort'); ?></p> <!-- Beispiel für ein Custom Field -->
-            </div>
 
-            <!-- Call-to-Action Button oder Links -->
-            <a href="<?php the_permalink(); ?>" class="cta-button">Mehr Informationen</a>
+
+                <aside class="my-post-sidebar">
+                    <?php dynamic_sidebar( 'side-widgets' ); ?>
+                </aside>
+            </div>   
+
         </div>
 
-    </article>
-        <?php endwhile; endif; ?>
-    
+    <?php endwhile; endif; ?>
 
-    <aside class="my-post-sidebar">
-        <?php dynamic_sidebar( 'side-bar' ); ?>
-    </aside>
 
-</div>
-
+</div> 
 
 </main>
+
+
+<?php 
+    get_template_part( 'template-parts/contact' );
+    get_template_part( 'template-parts/footer' ); 
+    ?>

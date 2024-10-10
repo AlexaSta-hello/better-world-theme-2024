@@ -17,20 +17,22 @@
 
         <div class="container my-header">
 
-        <a href="http://localhost:10013/"><?php bloginfo('title'); ?></a>
+            <div class="my-header-content">
+                <a href="http://localhost:10013/"><?php bloginfo('title'); ?></a>
 
-            <nav>
+                <nav>
 
-            <div class=" nav-bar burger-menu">☰</div> 
-                
-            <div class="nav-bar main-nav">
-            <?php wp_nav_menu( array(
-                'theme_location' => 'header-menu',
-                'container_class' => 'my-header-menu') ); 
-            ?>
-            </div>
-                        
-            </nav>
+                <div class=" nav-bar burger-menu">☰</div> 
+                    
+                <div class="nav-bar main-nav">
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'header-menu',
+                    'container_class' => 'my-header-menu') ); 
+                ?>
+                </div>
+                            
+                </nav>
+            </div>  
 
         </div>
     </header>

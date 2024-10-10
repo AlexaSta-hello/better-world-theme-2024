@@ -36,15 +36,27 @@ h1 {
     letter-spacing: 2px;
 }
 
-h2, h3 {
+h2, h3, .faq {
     color: hsl(300, 1%, 27%);
     margin-bottom: 2em;
     font-family: 'nunito sans', Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
 
-h3 {
+.faq {
+    margin-bottom: 0.5em;
+}
+
+h3, .faq {
     font-size: 20px;  
+}
+
+.faq p {
+    padding: 1em 2em ;
+}
+
+.wp-block-details summary {
+    transition: all 0.2s ease;
 }
 
 a {
@@ -63,12 +75,11 @@ p, li {
 p {line-height: 1.5em;}
 
 li {
-    transition: all 1.5s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 li:hover {
-    position: relative;
-    left: 10px;
+    transform: scale(1.1);
     
 }
 
@@ -202,7 +213,7 @@ HEADER
 }
 
 /* ------------
-Footer
+Footer - Part
 --------------*/
 
 .footer-wrapper {
@@ -218,6 +229,49 @@ Footer
 
 
 }
+
+/* ------------
+Contact - Part
+----------------*/
+#contact {
+    width: 100%;
+    height: 80vh;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .s-container {
+    background-color: blue;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-main-content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contact-main-content h2,
+.contact-main-content h3 {
+    color: whitesmoke;
+}
+
+.contact-button {
+    margin: 7em 0 0 0;
+}
+
+
+.contact-siebar {
+    width: 30%;
+}
+
+
 
 
 /* ------------------
@@ -493,15 +547,106 @@ about*/
 
 
 
-/*------------
-PAGE PROJECTS
+
+/*-----------
+PAGE
 ------------*/
 
-#projects-page {
+.my-page {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center; 
 }
+
+.mytitle {
+    height: 60vh;
+    margin-top: 40vh;
+}
+
+
+.my-page h1 {
+    padding: 1em;
+    font-size: 30px;   
+    text-align: center;
+    font-size: 50px;
+    transform: skewY(0deg);
+    position: relative;
+    animation-name: mymove;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);
+    box-shadow: 0.5em 0.5em red;  
+}
+
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: auto; transform: skewY(15deg);}
+}
+
+.page-einleitung {
+    border-left: 4px solid red;
+    border-bottom: 4px solid red;
+    padding: 2em;
+}
+
+.my-page h2.wp-block-heading:first-child {
+    width: 100%;
+    margin-left: 0 !important;
+}
+
+.wp-block-group {
+    margin: 0;
+}
+
+.wp-block-group ul {
+    position: relative;
+    left: 1em;
+}
+
+
+
+/* -------------
+PAGE_ Leistungen */
+
+
+#leistungen-page h1 {
+    background-color: blue;
+}
+
+#leistungen-page a {
+    text-decoration: underline;
+    padding: 0 0.2em;
+    color: hsl(300, 1%, 27%);
+}
+
+/* wp- classes */
+
+.leistungen-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5em;
+}
+
+.leistungen-page-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5em;
+}
+
+.leistungen-page-item-text {
+    width: 100%;
+    margin-left: 0;
+}
+
+.leistungen-page-item img {
+    display: none;
+}
+
+
+/*------------
+PAGE_ Projects */
+
 
 .p-container {
     max-width: 1200px;
@@ -513,25 +658,12 @@ PAGE PROJECTS
 
 #projects-page h1 {
     background-color: orange;
-    align-self: flex-start;
-   
-}
-
-
-
-#projects-page h2.wp-block-heading:first-child {
-    width: 100%;
-    margin-left: 0 !important;
+    align-self: flex-start; 
 }
 
 
 .projects-wp-all {
     background-color: whitesmoke;
-    border-radius: 5% 40% 0% 0%;
-}
-
-.projects-image-wrapper {
-    display: none;
 }
 
 
@@ -585,12 +717,29 @@ PAGE PROJECTS
     margin-bottom: 4em;
     width: 100%;
     display: flex;
-
 }
 
 
 .first-project {
     margin-bottom: 4em;
+}
+
+.project-text-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-right: 1.5em;
+    transition: transform 0.3s ease;  
+}
+
+#projects-page .project-text-box:hover {
+    transform: scale(1.1); 
+  }
+
+.project-text-box p {
+    color: hsl(300, 1%, 27%);
+    text-align: center;
 }
 
 .project-thumbnail-box {
@@ -606,117 +755,80 @@ PAGE PROJECTS
 }
 
 
-.project-text-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-right: 1.5em;
-    
-}
-
-.project-text-box p {
-    color: hsl(300, 1%, 27%);
-    text-align: center;
-}
-
-
-
 
 /*-----------
-PAGE
+SINGLE
 ------------*/
 
-.wp-block-heading {
-    margin-bottom: 1em;
+.post-thumbnail {
+    width: 100%;
+    max-height: 50vh;
+    overflow: hidden;
 }
 
-.mytitle {
-    text-align: center;
-    margin: 5em 0;
-    font-size: 50px;
-    transform: skewY(0deg);
-    position: relative;
-    animation-name: mymove;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);
-    box-shadow: 0.5em 0.5em red;  
+.wp-post-image,
+img {
+    width: 100%;
+    object-fit: cover;
 }
 
-@keyframes mymove {
-    from {top: 0px;}
-    to {top: auto; transform: skewY(15deg);}
+#my-post {
+    display: flex;
+    justify-content: center;
+}
+
+.s-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#my-post .post-title {
+    background-color: hsl(300, 1%, 27%);
+    color: #ffa500;
+    margin: 2em 0;
+
+}
+
+.my-post-content {
+    width: 75%;
+    margin-right: 5%;
+}
+
+.my-post-content img {
+    margin-bottom: 0.5em;
+}
+
+.my-post-content h2 {
+    background-color: orange;
+    padding: 0.5em 1em;   
 }
 
 
-
-.mytitle h1 {
-    padding: 1em;
-    font-size: 30px;
-    
-}
-
-
-
-h2.wp-block-heading:first-child {
-    width: 50%;
-    margin-left: 0 !important;
-}
-
-.wp-block-group {
-    margin: 0;
-}
-
-.wp-block-group ul {
-    position: relative;
-    left: 1em;
-}
-
-.einleitung {
+.wp-block-gallery {
     margin-bottom: 5em;
 }
-/* -------------
-PAGE_ Leistungen */
 
-#leistungen-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
+.my-post-sidebar {
+    width: 20%;
 }
 
-#leistungen-page h1 {
-    background-color: blue;
+.my-post-sidebar > li {
+    list-style: none;
+    transform: none;
 }
 
-#leistungen-page a {
-    text-decoration: underline;
-    padding: 0 0.2em;
+.my-post-sidebar a {
     color: hsl(300, 1%, 27%);
 }
 
-/* wp- classes */
-
-.leistungen-page-container {
-    display: flex;
-    flex-wrap: wrap;
+.wp-block-latest-posts li:first-child {
+    margin-top: 1em;
 }
 
-.leistungen-page-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 5em;
+.anpassung {
+    margin: 4em 0;
 }
 
-.leistungen-page-item-text {
-    width: 100%;
-    margin-left: 0;
-}
-
-.leistungen-page-item img {
-    display: none;
-}
 
 
 
@@ -765,12 +877,16 @@ PAGE_ Leistungen */
         margin-right: 5%;
     }
 
-    /* projects-page*/
+    /* page-projects*/
 
-    .p-container h1 {
+    .my-page .mytitle {
+        margin-top: 30vh;
+    }
+    
+    .my-page h1,
+    #my-post h1 {
         font-size: 80px;
         padding: 0.5em;
-        margin: 2em 0;
     }
     
 
@@ -783,26 +899,7 @@ PAGE_ Leistungen */
         top: -2em;  
     }
 
-    .projects-image-wrapper {
-        display: flex;
-        width: 38%;
-        object-fit: cover;
-        position: relative;
-        top: -2em;
-    }
-
-    .projects-text {
-        width: 58%;
-        padding: 2em;
-        background-color:inherit;
-        border-radius: 0px;
-        border: none;
-    }
-
   
-    .projects-image img {
-        width: 100%;
-    }
     
 
     .project-text-box,
@@ -822,10 +919,13 @@ PAGE_ Leistungen */
         font-size: 50px;
     }
 
-    .mytitle {
+    .my-page h1,
+    #my-post h1 {
         font-size: 100px;
-        margin: 1em 0;
-        box-shadow: 20px 20px red;
+    }
+
+    .my-page h2.wp-block-heading:first-child {
+        width: 50%;
     }
 
     .projects-wp-content {
@@ -945,24 +1045,3 @@ PAGE_ Leistungen */
 
 
 
-
-
-
-
-
-/*-----------
-SINGLE
-------------*/
-
-.post-thumbnail,
-.event-thumbnail {
-    width: 100%;
-    max-height: 50vh;
-    overflow: hidden;
-}
-
-.wp-post-image,
-img {
-    width: 100%;
-    object-fit: cover;
-}

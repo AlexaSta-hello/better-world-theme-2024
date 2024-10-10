@@ -143,7 +143,7 @@ get_template_part( 'template-parts/header' );
                 $counter = 0; // Zähler erstellen für styling
 
                 while($projects_query->have_posts()) : $projects_query->the_post();
-                    $counter++; // Zähler erhöhen
+                    $counter++;
             ?>
 
             
