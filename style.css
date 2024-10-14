@@ -233,18 +233,21 @@ Footer - Part
 /* ------------
 Contact - Part
 ----------------*/
-#contact {
+.my-contact {
     width: 100%;
-    height: 80vh;
-    background-color: blue;
+    height: 100vh;
+    background-color: hsl(240, 100%, 70%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+#contact .p-container {
+    background-color: hsl(240, 100%, 70%);
+}
+
 #contact .s-container {
-    background-color: blue;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
@@ -254,7 +257,6 @@ Contact - Part
     width: 70%;
     display: flex;
     flex-direction: column;
-    
 }
 
 .contact-main-content h2,
@@ -262,8 +264,36 @@ Contact - Part
     color: whitesmoke;
 }
 
+.contact-main-content h3 {
+    font-size: 20px;
+    margin-bottom: 2em;
+}
+
+.contact-main-content .adresse {
+    color: whitesmoke;
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.telefon {
+    margin-top: 0.5em;
+}
+
+.telefon a {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+
 .contact-button {
-    margin: 7em 0 0 0;
+    margin: auto 0 0 0;
+}
+
+.contact-button a {
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
 }
 
 
@@ -590,6 +620,7 @@ PAGE
 }
 
 .my-page h2.wp-block-heading:first-child {
+    font-size: clamp(2.625rem, calc(2.625rem +((1vw - 0.48rem)* 8.4135)), 3.25rem);
     width: 100%;
     margin-left: 0 !important;
 }

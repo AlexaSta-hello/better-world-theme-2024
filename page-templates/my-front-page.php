@@ -267,7 +267,7 @@ get_template_part( 'template-parts/header' );
 
 
 <?php
-// Footer einbinden
+get_template_part( 'template-parts/contact' );
 get_template_part( 'template-parts/footer' );
 ?>
 

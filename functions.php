@@ -36,13 +36,23 @@ register_sidebar (array (
   'name'    => 'Sidebar Widgets',
   'id'      => 'side-widgets'
 ));
-}
-  
-  add_action ('widgets_init', 'register_my_widgets');
+}  
+add_action ('widgets_init', 'register_my_widgets');
 
 
   // Beitragsbilder aktivieren
 add_theme_support('post-thumbnails');
+
+// Block Template Parts im Customizer aktivieren:
+
+add_action( 'after_setup_theme', 'add_block_template_part_support' );
+
+function add_block_template_part_support() {
+
+    add_theme_support( 'block-template-parts' );
+
+}
+
 
 
 // JS Datei für Animationen einbinden
