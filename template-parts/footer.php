@@ -1,7 +1,7 @@
 
     <footer>
         <div class="footer-wrapper">
-            <div class="may-footer">
+            <div class="my-footer">
 
                 <aside class="footer-sidebar">
                     <?php dynamic_sidebar( 'footer-widgets' ); ?>

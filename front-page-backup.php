@@ -27,7 +27,7 @@ get_template_part( 'template-parts/header' );
 
 
 <!-- Slogan Section -->
-    <section id="slogan">
+    <section class="slogan">
         <!-- Hole den Titel aus ACF -->
         <div class="slogan-container">
             

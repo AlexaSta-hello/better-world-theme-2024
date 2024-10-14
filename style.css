@@ -15,6 +15,13 @@ Author URI: #
 RESET
 --------------------*/
 
+:root {
+    --main-gray: rgb(70, 68, 70);
+    --main-red: red;
+    --main-blue: hsl(240, 100%, 70%);
+    --main-orange: orange;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -83,33 +90,27 @@ li:hover {
     
 }
 
-.cta-button {
-    background-color: rgb(70, 68, 70);
+.wp-element-button {
     margin: auto;
     width: 250px;
     border-radius: 5px;
-    margin-top: 100px;
     display: flex;
     justify-content: center;
-    padding: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
 }
-
-.cta-button a {
+.wp-block-button__link {
+    background-color: var(--main-gray);
     color: whitesmoke;
-    font-weight: 200;
+    font-weight: 400;
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;;
 }
 
-
-
-.cta-button:hover {
+.wp-block-button__link:hover {
     background-color: whitesmoke;
+    color: var(-main-gray)
 }
 
-.cta-button:hover a {
-    color: rgb(70, 68, 70);
-}
+
 
 @media only screen and (min-width: 768px) {
     h1 {
@@ -147,7 +148,7 @@ HEADER
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(300, 1%, 27%);
+    background-color: var(--main-gray);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -217,7 +218,7 @@ Footer - Part
 --------------*/
 
 .footer-wrapper {
-    background-color: hsl(300, 1%, 27%);
+    background-color: var(-main-gray);
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -235,19 +236,19 @@ Contact - Part
 ----------------*/
 .my-contact {
     width: 100%;
-    height: 100vh;
-    background-color: hsl(240, 100%, 70%);
+    min-height: 100vh;
+    background-color: var(--main-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#contact .p-container {
-    background-color: hsl(240, 100%, 70%);
+.my-contact .p-container {
+    background-color: var(--main-blue);
 }
 
-#contact .s-container {
+.my-contact .s-container {
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
@@ -301,6 +302,10 @@ Contact - Part
     width: 30%;
 }
 
+.contact-siebar img {
+    max-height: 100%;
+}
+
 
 
 
@@ -323,10 +328,17 @@ STARTSEITE
     justify-content: center;
 }
 
+.wp-block-group .fp-container {
+    max-width: 1200px;
+    background-color: whitesmoke;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5%;
+}
+
 .fp-container {
     max-width: 1200px;
     background-color: whitesmoke;
-    margin: 100px 1em;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 5%;
@@ -339,23 +351,25 @@ STARTSEITE
 
 /*--- #banner ---*/
 
-#banner {
-    background-color: blue;
+.banner {
+    background-color: var(--main-blue);
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center; 
+    padding-bottom: 100px; 
 }
 
 
 
-.banner-wrapper{
+.banner-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;   
 } 
+
 
 .video {
     max-width: 70%;   
@@ -364,7 +378,7 @@ STARTSEITE
 
 /*--- slogan ---*/
 
-#slogan {
+.slogan {
     min-height: 30vh;
     background-color: red;
     display: flex;
@@ -383,7 +397,7 @@ STARTSEITE
     
 }
 
-#slogan h1 {
+.slogan h1 {
     font-size: 30px;
     text-align: center;
     color: whitesmoke;
@@ -392,12 +406,12 @@ STARTSEITE
     
 }
 
-#femme {
+.femme {
     position: relative;
     opacity: 0;
 }
 
-#web {
+.web {
     position: relative;
     opacity: 0;
 }
@@ -438,27 +452,28 @@ STARTSEITE
 
 /*--- leistungen ---*/
 
-#leistungen {
+.leistungen {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: blue;
     width: 100%;
+    padding-bottom: 100px;
 }
 
-#leistungen h2 {  
+.leistungen h2 {  
     font-size: 30px;
 }
 
 .leistungen-container {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;   
+    margin-top: 100px;
+    margin-left: 1em !important;
+    margin-right: 1em !important;  
 }
 
-#leistungen .text-field {
+.leistungen .text-field {
     line-height: 1.5em;
     color: hsl(300, 1%, 27%);
     width: 100%;
@@ -468,7 +483,7 @@ STARTSEITE
     display: none;
 }
 
-#leistungen h3 {
+.leistungen h3 {
     margin-bottom: 0em;
     margin-top: 1.5em;
     line-height: 1.3em;
@@ -477,8 +492,8 @@ STARTSEITE
 
 /* projects */
 
-#projects {
-    background-color: orange; 
+.projects {
+    background-color: var(--main-orange);
     width: 100vw;
     display: flex; 
     flex-direction: column;
@@ -487,26 +502,29 @@ STARTSEITE
     z-index: 3;
 }
 
-
-#projects .projects-container {
-    justify-content: flex-start;
+.projects-section-loop-container li:hover {
+    transform: none;
 }
 
 
-#projects .project-text-box {
+.project-section-text-box {
     justify-content: flex-start;
     text-align: start;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-#projects .project-text-box p {
+
+
+.project-section-text-box p {
     text-align: start;
 }
 
-#projects h2 {
+.projects h2 {
     font-size: 30px; 
 }
+
+
 
 
 /*---------------
@@ -588,11 +606,6 @@ PAGE
     align-items: center; 
 }
 
-.mytitle {
-    height: 60vh;
-    margin-top: 40vh;
-}
-
 
 .my-page h1 {
     padding: 1em;
@@ -606,6 +619,7 @@ PAGE
     animation-fill-mode: forwards;
     animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);
     box-shadow: 0.5em 0.5em red;  
+    margin: 2em 0 4em 0;
 }
 
 @keyframes mymove {
@@ -640,11 +654,11 @@ PAGE
 PAGE_ Leistungen */
 
 
-#leistungen-page h1 {
+.leistungen-page h1 {
     background-color: blue;
 }
 
-#leistungen-page a {
+.leistungen-page a {
     text-decoration: underline;
     padding: 0 0.2em;
     color: hsl(300, 1%, 27%);
@@ -873,21 +887,17 @@ img {
         margin-top: 8vh;  
     }
 
-    .studio-button-wrapper {
-        font-size: 20px;
-    }
-
-    #slogan h1,
-    #leistungen h2,
-    #projects h2,
+    .slogan h1,
+    .leistungen h2,
+    .projects h2,
     #about h2,
     .slogan-container-projects h2{  
         font-size: 50px;
         line-height: 1.3em;
     }
 
-    #leistungen .cta-button,
-    #projects .cta-button {
+    .leistungen .wp-element-button,
+    .projects .wp-element-button {
         margin: 100px 0 0 auto;
         margin-left: auto;
     }
@@ -896,7 +906,7 @@ img {
         align-items: center;
     }
 
-    #leistungen .text-field {
+    .leistungen .text-field {
         width: 50%;
     }
 
@@ -930,14 +940,6 @@ img {
         top: -2em;  
     }
 
-  
-    
-
-    .project-text-box,
-    .project-thumbnail-box {
-        width: 49%;
-        flex-direction: column;
-    }
 
     #projects-page .project-text-box {
         margin-right: 2em;
@@ -985,10 +987,7 @@ img {
     height: 300px;
     }
 
-    #projects .project-text-box,
-    #projects .project-thumbnail-box {
-        width: 23.5%;
-    }
+ 
 
     .first-project {
         margin-bottom: 0;
@@ -1011,7 +1010,7 @@ img {
     .font-leistungen {
         position: sticky;
         top: 0;
-        transform: rotate(-90deg) translateX(50%) translateX(-170%)
+        transform: rotate(-90deg) translateX(-120%)
             translateY(-435px);
         transform-origin: left top;
         z-index: 2; 
@@ -1020,7 +1019,7 @@ img {
     .font-projekte {
         position: sticky;
         top: 0;
-        transform: rotate(-90deg) translateX(50%) translateX(-175%)
+        transform: rotate(-90deg) translateX(-125%)
             translateY(-485px);
         transform-origin: left top;
         z-index: 4; 
@@ -1029,7 +1028,7 @@ img {
     .font-about {
         position: sticky;
         top: 0;
-        transform: rotate(-90deg) translateX(50%) translateX(-186%)
+        transform: rotate(-90deg) translateX(-136%)
             translateY(-554px);
         transform-origin: left top;
         z-index: 6; 
