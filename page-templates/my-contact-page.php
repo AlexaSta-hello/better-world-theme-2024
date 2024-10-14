@@ -4,7 +4,7 @@ get_template_part( 'template-parts/header' ); ?>
 
 
 <?php
-block_template_part( 'contacts' ); ?>
+block_template_part( 'my-contact-block-template' ); ?>
 
 <?php
 get_template_part( 'template-parts/footer' ); 
