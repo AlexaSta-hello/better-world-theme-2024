@@ -102,7 +102,7 @@ li:hover {
     background-color: var(--main-gray);
     color: whitesmoke;
     font-weight: 400;
-    font-family: 'nunito sans', Arial, Helvetica, sans-serif;;
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;
 }
 
 .wp-block-button__link:hover {
@@ -154,7 +154,8 @@ HEADER
     z-index: 10;
     width: 100%;
     color: whitesmoke;
-    padding: 1.5em 16px;
+    padding: 1.5em 5%;
+    
 }
 
 .my-header-content {
@@ -162,6 +163,7 @@ HEADER
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
+    
 }
 
 .my-header a {
@@ -217,19 +219,78 @@ HEADER
 Footer - Part
 --------------*/
 
-.footer-wrapper {
-    background-color: var(-main-gray);
-    height: 80vh;
+.my-footer{
+    
+    background-color: var(--main-gray);
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    position: relative;
-    z-index: 7;
+    align-items: center;
 }
-.my-footer {
+
+.footer-container {
     max-width: 1200px;
-
-
+    height: 90vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--main-gray);
+    width: 100%;
+    color: whitesmoke;
+    padding: 1.5em 5%;
 }
+
+.footer-nav-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 0 5%;
+}
+
+.footer-nav ul {
+    display: flex;
+} 
+
+.footer-nav li {
+    margin-right: 2em;
+}
+
+.my-footer h2,
+.my-footer h3,
+.my-footer p {
+    color: whitesmoke;
+}
+
+.footer-widgets > div h2 {
+    background-color: inherit;
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+
+.footer-widgets > div p {
+    font-size: 20px;
+}
+
+.footer-contacts {
+    align-items: flex-start;
+} 
+
+.wp-block-social-links li a {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.wp-block-social-links li:hover,
+.footer-nav li:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+    transform: none;
+    margin-top: 0.1em;
+}
+
+
 
 /* ------------
 Contact - Part
@@ -242,6 +303,8 @@ Contact - Part
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 7;
 }
 
 .my-contact .p-container {
@@ -260,14 +323,19 @@ Contact - Part
     flex-direction: column;
 }
 
-.contact-main-content h2,
+.contact-main-content  h2.wp-block-heading,
 .contact-main-content h3 {
     color: whitesmoke;
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
+
 
 .contact-main-content h3 {
     font-size: 20px;
     margin-bottom: 2em;
+    margin-top: 1em;
+    font-weight: 200;
 }
 
 .contact-main-content .adresse {
@@ -320,20 +388,15 @@ STARTSEITE
     letter-spacing: 2px;
 }
 
-.startseite {
+section {
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
-
-.wp-block-group .fp-container {
-    max-width: 1200px;
-    background-color: whitesmoke;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 5%;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px; 
 }
 
 .fp-container {
@@ -342,7 +405,10 @@ STARTSEITE
     border-radius: 10px 10px 0 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 5%;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
 }
+
 
 .font {
     display: none;
@@ -353,13 +419,6 @@ STARTSEITE
 
 .banner {
     background-color: var(--main-blue);
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    padding-bottom: 100px; 
 }
 
 
@@ -381,10 +440,8 @@ STARTSEITE
 .slogan {
     min-height: 30vh;
     background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .slogan-container {
@@ -392,25 +449,17 @@ STARTSEITE
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em 0;
-
-    
+    padding: 2em 0; 
 }
 
 .slogan h1 {
     font-size: 30px;
     text-align: center;
     color: whitesmoke;
-   
-    font-style: italic;
-    
+    font-style: italic; 
 }
 
-.femme {
-    position: relative;
-    opacity: 0;
-}
-
+.femme, 
 .web {
     position: relative;
     opacity: 0;
@@ -453,25 +502,14 @@ STARTSEITE
 /*--- leistungen ---*/
 
 .leistungen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-    width: 100%;
-    padding-bottom: 100px;
+    background-color: var(--main-blue);
 }
 
 .leistungen h2 {  
     font-size: 30px;
 }
 
-.leistungen-container {
-    justify-content: space-between;
-    margin-top: 100px;
-    margin-left: 1em !important;
-    margin-right: 1em !important;  
-}
+
 
 .leistungen .text-field {
     line-height: 1.5em;
@@ -494,117 +532,68 @@ STARTSEITE
 
 .projects {
     background-color: var(--main-orange);
-    width: 100vw;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
     position: relative;
     z-index: 3;
 }
 
-.projects-section-loop-container li:hover {
+.projects-section-content {
+    width: 100%;
+}
+
+.projects-section-content h3 {
+    margin-bottom: 1em;
+}
+
+.projects-section-content p {
+    margin-bottom: 1em;
+}
+
+
+.beitrags-template {
+    width: 96%;
+}
+
+
+.beitrags-template li:hover {
     transform: none;
 }
 
-
-.project-section-text-box {
-    justify-content: flex-start;
-    text-align: start;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-
-
-.project-section-text-box p {
-    text-align: start;
-}
 
 .projects h2 {
     font-size: 30px; 
 }
 
+.beitrags-template {
+    display: flex;
+    flex-wrap: wrap
+}
 
+.beitrags-template li {
+    width: 100%;
+}
 
 
 /*---------------
 about*/
 
-#about {
-    background-color: red;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+.about {
+    background-color: var(--main-red);
     z-index: 5;
 }
 
-#about h2 {
-    font-size: 30px; 
-    
+.about h2 {
+    font-size: 30px;  
 }
 
-
-.about-image-wrapper {
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
+.about figure {
+    margin-bottom: 100px;
 }
-
-.about-image-wrapper img {
-    width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-}
-
-.about-container {
-    max-width: 1200px;
-    margin: 100px 1em;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.about-text-wrapper {
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
-}
-
-.about-text-wrapper h2 {
-    margin-bottom: 0.5em;
-}
-
-.about-button {
-    position: absolute;
-    bottom: 10%;
-    right: 8%;
-}
-
-
-
-
 
 
 
 /*-----------
 PAGE
 ------------*/
-
-.my-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
 
 
 .my-page h1 {
@@ -618,7 +607,7 @@ PAGE
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);
-    box-shadow: 0.5em 0.5em red;  
+    box-shadow: 0.5em 0.5em var(--main-red);  
     margin: 2em 0 4em 0;
 }
 
@@ -628,8 +617,8 @@ PAGE
 }
 
 .page-einleitung {
-    border-left: 4px solid red;
-    border-bottom: 4px solid red;
+    border-left: 4px solid var(--main-red);
+    border-bottom: 4px solid var(--main-red);
     padding: 2em;
 }
 
@@ -655,7 +644,7 @@ PAGE_ Leistungen */
 
 
 .leistungen-page h1 {
-    background-color: blue;
+    background-color: var(--main-blue)
 }
 
 .leistungen-page a {
@@ -701,20 +690,25 @@ PAGE_ Projects */
 }
 
 
-#projects-page h1 {
+.project-page h1 {
     background-color: orange;
     align-self: flex-start; 
 }
 
+.project-page-item {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
 
-.projects-wp-all {
-    background-color: whitesmoke;
+.project-page-item:hover {
+    opacity: 0.8;
 }
 
 
-#slogan-projects {
+
+.slogan-projects {
     min-height: 25vh;
-    background-color: blue;
+    background-color: var(--main-blue);
     width: 100% !important;
     display: flex;
     justify-content: center;
@@ -727,10 +721,10 @@ PAGE_ Projects */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em 0;
+ 
 }
 
-#slogan-projects h2 {
+.slogan-projects h2 {
     font-family: 'righteous', Arial, Helvetica, sans-serif;
     font-style: italic;
     text-transform: uppercase;
@@ -739,65 +733,18 @@ PAGE_ Projects */
     margin-bottom: 0;
 }
 
-#schau {
+.schau {
     position: relative;
     opacity: 0;
 }
 
-#inspiration {
+.inspiration {
     position: relative;
     opacity: 0;
 }
 
 
-.projects-loop-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: whitesmoke;
-}
 
-#projects-page .projects-loop-container > div {
-    margin-bottom: 4em;
-    width: 100%;
-    display: flex;
-}
-
-
-.first-project {
-    margin-bottom: 4em;
-}
-
-.project-text-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-right: 1.5em;
-    transition: transform 0.3s ease;  
-}
-
-#projects-page .project-text-box:hover {
-    transform: scale(1.1); 
-  }
-
-.project-text-box p {
-    color: hsl(300, 1%, 27%);
-    text-align: center;
-}
-
-.project-thumbnail-box {
-    height: 400px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.project-thumbnail-box img {
-    object-fit: cover;
-    width: 100%;
-    min-height: 100%;
-}
 
 
 
@@ -817,7 +764,7 @@ img {
     object-fit: cover;
 }
 
-#my-post {
+.my-post {
     display: flex;
     justify-content: center;
 }
@@ -827,7 +774,7 @@ img {
     flex-direction: row;
 }
 
-#my-post .post-title {
+.my-post .post-title {
     background-color: hsl(300, 1%, 27%);
     color: #ffa500;
     margin: 2em 0;
@@ -890,24 +837,30 @@ img {
     .slogan h1,
     .leistungen h2,
     .projects h2,
-    #about h2,
+    .about h2,
     .slogan-container-projects h2{  
         font-size: 50px;
         line-height: 1.3em;
     }
 
+
     .leistungen .wp-element-button,
     .projects .wp-element-button {
-        margin: 100px 0 0 auto;
         margin-left: auto;
     }
 
-    .leistungen-container {
-        align-items: center;
+    
+
+    .leistungen-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
     }
 
     .leistungen .text-field {
         width: 50%;
+        margin: 0 !important;
     }
 
     .leistungen-image {
@@ -915,7 +868,17 @@ img {
         width: 45%;
         min-width: 250px;
         height: auto;
-        margin-right: 5%;
+        margin: 0 !important;
+    }
+
+    
+    .beitrags-template {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .beitrags-template li {
+        width: 48%;
     }
 
     /* page-projects*/
@@ -925,7 +888,7 @@ img {
     }
     
     .my-page h1,
-    #my-post h1 {
+    .my-post h1 {
         font-size: 80px;
         padding: 0.5em;
     }
@@ -941,9 +904,6 @@ img {
     }
 
 
-    #projects-page .project-text-box {
-        margin-right: 2em;
-    }
 }
 
 @media only screen and (min-width: 992px) {

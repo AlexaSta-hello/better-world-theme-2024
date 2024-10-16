@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sloganProjectsSection = document.querySelector('#slogan-projects');
-    const schauElement = document.querySelector('#schau');
-    const inspirationElement = document.querySelector('#inspiration');
+    const sloganProjectsSection = document.querySelector('.slogan-projects');
+    const schauElement = document.querySelector('.schau');
+    const inspirationElement = document.querySelector('.inspiration');
 
     const observer2 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

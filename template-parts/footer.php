@@ -1,18 +1,28 @@
 
-    <footer>
-        <div class="footer-wrapper">
-            <div class="my-footer">
+    <footer class="my-footer">
+        
+            <div class="footer-container">
 
-                <aside class="footer-sidebar">
+
+                <aside class="footer-widgets">
                     <?php dynamic_sidebar( 'footer-widgets' ); ?>
                 </aside>
-
-                <nav class="nav-bar footer-nav">
-                    <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-                </nav>
-                <p>© 2024 Alexandra Staszewski</p>
+                
+                
             </div>
-        </div>
+
+                
+            <div class="footer-nav-content">
+                    
+
+                    <nav class="nav-bar footer-nav">
+                        <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+                    </nav>
+
+                    <p>&copy; <?php echo date('Y'); ?>  BETTER WORLD</p>
+
+                </div>
+        
         
     </footer>
 

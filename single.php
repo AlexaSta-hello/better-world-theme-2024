@@ -2,7 +2,7 @@
 get_template_part( 'template-parts/header' );
 ?>
 
-<main id="my-post">
+<main class="my-post">
 
 <div class="p-container">
 
@@ -43,7 +43,5 @@ get_template_part( 'template-parts/header' );
 
 
 <?php 
-    block_template_part( 'footer' );
-    get_template_part( 'template-parts/contact' );
     get_template_part( 'template-parts/footer' ); 
     ?>
