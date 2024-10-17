@@ -20,6 +20,7 @@ RESET
     --main-red: red;
     --main-blue: hsl(240, 100%, 70%);
     --main-orange: orange;
+    --main-violet: rgb(139, 92, 180);
 }
 
 * {
@@ -72,7 +73,7 @@ a {
     font-weight: 400;
 }
 
-p, li {
+p {
     font-size: 18px;
     font-family: 'nunito sans';
     font-weight: 200; 
@@ -81,14 +82,7 @@ p, li {
 
 p {line-height: 1.5em;}
 
-li {
-    transition: all 0.3s ease;
-}
 
-li:hover {
-    transform: scale(1.1);
-    
-}
 
 .wp-element-button {
     margin: auto;
@@ -107,7 +101,7 @@ li:hover {
 
 .wp-block-button__link:hover {
     background-color: whitesmoke;
-    color: var(-main-gray)
+    color: var(--main-gray);
 }
 
 
@@ -140,29 +134,30 @@ HEADER
     list-style-type: none;
  }
 
- .nav-bar a {
-    color: whitesmoke;
- }
 
 .my-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-gray);
     position: fixed;
     top: 0;
     z-index: 10;
     width: 100%;
-    color: whitesmoke;
-    padding: 1.5em 5%;
+    padding: 1em 5%;
+    background-color: var(--main-gray);
+    
+}
+
+.my-header.active {
+    opacity: 0.9;
     
 }
 
 .my-header-content {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
+    flex-direction: column;
     width: 100%;
+    padding-left: 5%;
     
 }
 
@@ -177,26 +172,63 @@ HEADER
 
 .main-nav.active {
     display: flex;
-   
+    flex-direction: column;
 }
+
+
+
+.main-nav.active > .my-header-menu {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em; 
+}
+
+
+.main-nav.active li {
+   border-bottom: 1px solid whitesmoke;
+   font-size: 22px;
+   padding-top: 0.5em;
+   padding-bottom: 1em;
+}
+
+.main-nav.active li:hover {
+   transform: translateX(5px);
+ }
 
 .burger-menu {
-
     cursor: pointer;
     color: white;
+    position: absolute;
+    top: 20px;
+    right: 5%;
 }
 
-@media only screen and (min-width: 576px) {
+.bloginfo {
+    padding: 0.5em 1em;
+    margin-bottom: 0;  
+}
+
+@media only screen and (min-width: 580px) {
+
+
+    .my-header-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+        
+    }
    
     .burger-menu {
         display: none;
     }
+    
     .main-nav {
-        
         display: flex;
-        flex-direction: column;
         align-items: center;
-        
     }
     
     .main-nav ul {
@@ -205,8 +237,16 @@ HEADER
     }
     
     .main-nav li {
-        margin-right: 2em;
+        padding: 0.5em 1em;
         margin-bottom: 0;  
+    }
+
+    
+
+    .main-nav li:hover,
+    .bloginfo:hover {
+        border: 1px solid whitesmoke;
+        
     }
     
     .main-nav li:last-child {
@@ -230,20 +270,67 @@ Footer - Part
 
 .footer-container {
     max-width: 1200px;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
     background-color: var(--main-gray);
-    width: 100%;
+    width: 90%;
     color: whitesmoke;
-    padding: 1.5em 5%;
+    padding: 200px 10%;
+}
+
+.footer-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.footer-item {
+    margin-bottom: 3em !important;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.my-footer h2,
+.my-footer h3,
+.my-footer p {
+    color: whitesmoke;
+}
+
+.footer-widgets {
+    width: 100%;
+}
+
+.footer-widgets > div h2 {
+    background-color: inherit;
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+
+.footer-widgets > div p {
+    font-size: 16px;
+}
+
+.wp-block-social-links li a {
+    font-size: 22px;
+    font-weight: 200;
+    position: relative;
+    left: -24px;
+}
+
+.wp-block-social-links li:hover,
+.footer-nav li:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+    transform: none;
 }
 
 .footer-nav-content {
     max-width: 1200px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: auto;
     padding: 0 5%;
@@ -254,40 +341,34 @@ Footer - Part
 } 
 
 .footer-nav li {
-    margin-right: 2em;
-}
-
-.my-footer h2,
-.my-footer h3,
-.my-footer p {
+    margin-right: 1.5em;
+    padding-bottom: 0.5em;
     color: whitesmoke;
 }
 
-.footer-widgets > div h2 {
-    background-color: inherit;
-    padding: 0;
-    margin-bottom: 0.5em;
-}
-
-.footer-widgets > div p {
-    font-size: 20px;
-}
-
-.footer-contacts {
-    align-items: flex-start;
-} 
-
-.wp-block-social-links li a {
-    font-size: 24px;
-    font-weight: 200;
-}
-
-.wp-block-social-links li:hover,
-.footer-nav li:hover {
+.footer-nav li a {
     color: whitesmoke;
-    text-decoration: underline;
-    transform: none;
-    margin-top: 0.1em;
+    font-size: 16px;
+    
+}
+
+.copy {
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 580px) {
+
+    .footer-container {
+        padding: 200px 5%;
+    }
+
+    .footer-items {
+        flex-direction: row;
+        
+    } 
+    
+    
+    
 }
 
 
@@ -298,7 +379,7 @@ Contact - Part
 .my-contact {
     width: 100%;
     min-height: 100vh;
-    background-color: var(--main-blue);
+    background-color: var(--main-violet);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -308,17 +389,18 @@ Contact - Part
 }
 
 .my-contact .p-container {
-    background-color: var(--main-blue);
+    background-color: var(--main-violet)
 }
 
 .my-contact .s-container {
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
+    padding: 0 5%;
 }
 
 .contact-main-content {
-    width: 70%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
@@ -374,6 +456,10 @@ Contact - Part
     max-height: 100%;
 }
 
+.herz {
+    font-size: 100px;
+}
+
 
 
 
@@ -424,33 +510,35 @@ section {
 
 
 .banner-wrapper {
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;   
 } 
 
-
 .video {
-    max-width: 70%;   
+    margin-bottom: 100px;
 }
 
 
 /*--- slogan ---*/
 
 .slogan {
-    min-height: 30vh;
+    
     background-color: red;
-    padding-bottom: 0;
-    padding-top: 0;
+    
 }
 
-.slogan-container {
-    width: 80%;
+.slogan-section {
+    width: 100% !important;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 2em 0; 
+    padding: 0 !important;
+    height: 183px;
 }
+
+
 
 .slogan h1 {
     font-size: 30px;
@@ -595,31 +683,26 @@ about*/
 PAGE
 ------------*/
 
+.titel-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
 .my-page h1 {
     padding: 1em;
     font-size: 30px;   
     text-align: center;
-    font-size: 50px;
-    transform: skewY(0deg);
-    position: relative;
-    animation-name: mymove;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);
-    box-shadow: 0.5em 0.5em var(--main-red);  
-    margin: 2em 0 4em 0;
+    margin: 4em 0 4em 0;
 }
 
-@keyframes mymove {
-    from {top: 0px;}
-    to {top: auto; transform: skewY(15deg);}
-}
 
 .page-einleitung {
     border-left: 4px solid var(--main-red);
     border-bottom: 4px solid var(--main-red);
     padding: 2em;
+    margin-bottom: 100px !important;
+    
 }
 
 .my-page h2.wp-block-heading:first-child {
@@ -644,7 +727,8 @@ PAGE_ Leistungen */
 
 
 .leistungen-page h1 {
-    background-color: var(--main-blue)
+    background-color: var(--main-blue);
+    box-shadow: 0.5em 0.5em var(--main-orange);
 }
 
 .leistungen-page a {
@@ -652,6 +736,54 @@ PAGE_ Leistungen */
     padding: 0 0.2em;
     color: hsl(300, 1%, 27%);
 }
+
+.leistungen-page-item {
+    width: 100%;
+}
+
+.konzept-text,
+.webdesign-text,
+.hoisting-text {
+    margin-top: 2.5em;
+}
+
+.webentwicklung-text,
+.seo-text {
+    margin-bottom: 2.5em;
+}
+
+.leistungen-page h2 {
+    display: inline-block;
+}
+.leistungen-page h2::after {
+   content: "";
+   display: block;
+   width: 0;
+   height: 2px;
+   background-color: black;
+   transition: all 1s;
+}
+.leistungen-konzept h2.active::after {
+   width: 60%;
+}
+
+.leistungen-webentwicklung h2.active::after {
+    width: 60%;
+ }
+
+ .leistungen-webdesign h2.active::after {
+    width: 60%;
+ }
+
+ .leistungen-seo h2.active::after {
+    width: 60%;
+ }
+
+ .leistungen-hoisting h2.active::after {
+    width: 60%;
+ }
+
+
 
 /* wp- classes */
 
@@ -662,20 +794,18 @@ PAGE_ Leistungen */
 }
 
 .leistungen-page-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 5em;
 }
 
-.leistungen-page-item-text {
-    width: 100%;
-    margin-left: 0;
+
+.leistungen-page-item-liste li {
+    font-size: 20px;
+    font-family: 'nunito sans';
+    font-weight: 200; 
+    margin-bottom: 0.7em;
 }
 
-.leistungen-page-item img {
-    display: none;
-}
+
 
 
 /*------------
@@ -689,10 +819,14 @@ PAGE_ Projects */
     margin-bottom: 0;
 }
 
+.project-page {
+    background-color: var(--main-blue);
+}
 
 .project-page h1 {
-    background-color: orange;
-    align-self: flex-start; 
+    background-color: var(--main-orange);
+    align-self: flex-start;
+    box-shadow: 0.5em 0.5em var(--main-red); 
 }
 
 .project-page-item {
@@ -704,33 +838,18 @@ PAGE_ Projects */
     opacity: 0.8;
 }
 
-
-
 .slogan-projects {
-    min-height: 25vh;
     background-color: var(--main-blue);
-    width: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5em; 
 }
 
-.slogan-container-projects {
-   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
-}
 
 .slogan-projects h2 {
     font-family: 'righteous', Arial, Helvetica, sans-serif;
     font-style: italic;
-    text-transform: uppercase;
     text-align: center;
     color: whitesmoke;
     margin-bottom: 0;
+    font-size: 30px;
 }
 
 .schau {
@@ -741,6 +860,24 @@ PAGE_ Projects */
 .inspiration {
     position: relative;
     opacity: 0;
+}
+
+
+/*-------------
+PAGE - About */
+
+.about-page h1 {
+    background-color: var(--main-red);
+    box-shadow: 0.5em 0.5em var(--main-violet);
+}
+
+
+/*-------------
+PAGE - Contact */
+
+.contact-page h1 {
+    background-color: var(--main-violet);
+    box-shadow: 0.5em 0.5em var(--main-blue);
 }
 
 
@@ -834,6 +971,10 @@ img {
         margin-top: 8vh;  
     }
 
+    .slogan-section {
+        height: 260px;
+    }
+
     .slogan h1,
     .leistungen h2,
     .projects h2,
@@ -841,6 +982,21 @@ img {
     .slogan-container-projects h2{  
         font-size: 50px;
         line-height: 1.3em;
+    }
+
+    .my-page h1 {
+        margin: 2em 0 3em 0;
+        transform: skewY(0deg);
+        position: relative;
+        animation-name: mymove;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);   
+    }
+
+    @keyframes mymove {
+        from {top: 0px;}
+        to {top: auto; transform: skewY(15deg);}
     }
 
 
@@ -892,7 +1048,6 @@ img {
         font-size: 80px;
         padding: 0.5em;
     }
-    
 
     .projects-wp-content {
         display: flex;
@@ -901,6 +1056,59 @@ img {
         gap: 1%;
         position: relative;
         top: -2em;  
+    }
+
+    /* page-leistungen */
+
+    .leistungen-page-item-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 10%;
+    }
+
+    .leistungen-page-item-liste {
+        width: 40%;
+    }
+
+    .leistungen-page-item-text {
+        width: 50%;
+    }
+     
+     .leistungen-webentwicklung h2,
+     .leistungen-seo h2{
+        position: relative;
+        left: 64%;
+     } 
+
+     .leistungen-konzept h2.active::after {
+        width: 53%;
+     }
+
+     .leistungen-webentwicklung h2.active::after {
+         width: 45%;
+      }
+     
+      .leistungen-webdesign h2.active::after {
+         width: 31%;
+      }
+     
+      .leistungen-seo h2.active::after {
+         width: 46%;
+      }
+     
+      .leistungen-hoisting h2.active::after {
+         width: 83%;
+      }
+
+    .konzept-text,
+    .webdesign-text,
+    .hoisting-text {
+        margin-top: 0;
+    }
+
+    .webentwicklung-text,
+    .seo-text {
+        margin-bottom: 0;
     }
 
 
@@ -913,7 +1121,7 @@ img {
     }
 
     .my-page h1,
-    #my-post h1 {
+    .my-post h1 {
         font-size: 100px;
     }
 

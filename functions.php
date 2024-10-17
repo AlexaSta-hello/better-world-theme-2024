@@ -56,13 +56,18 @@ function add_block_template_part_support() {
 
 
 // JS Datei für Animationen einbinden
-function enqueue_slogan_animation_script() {
+function enqueue_slogan_animations_script() {
   wp_enqueue_script( 'slogan-animations', get_template_directory_uri() . '/js/slogan-animations.js', array(), null, true );
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_slogan_animation_script' );
+add_action( 'wp_enqueue_scripts', 'enqueue_slogan_animations_script' );
 
-function enqueue_slogan_projects_animation_script() {
+function enqueue_slogan_projects_animations_script() {
   wp_enqueue_script( 'slogan-projects-animations', get_template_directory_uri() . '/js/slogan-projects-animations.js', array(), null, true );
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_slogan_projects_animation_script' );
+add_action( 'wp_enqueue_scripts', 'enqueue_slogan_projects_animations_script' );
+
+function enqueue_leistungen_animations_script() {
+  wp_enqueue_script( 'leistungen-animations', get_template_directory_uri() . '/js/leistungen-animations.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_leistungen_animations_script' );
 

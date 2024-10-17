@@ -4,10 +4,10 @@
             <div class="footer-container">
 
 
-                <aside class="footer-widgets">
+                <div class="footer-widgets">
                     <?php dynamic_sidebar( 'footer-widgets' ); ?>
-                </aside>
-                
+                </div>
+         
                 
             </div>
 
@@ -19,7 +19,7 @@
                         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
                     </nav>
 
-                    <p>&copy; <?php echo date('Y'); ?>  BETTER WORLD</p>
+                    <p class="copy">&copy; <?php echo date('Y'); ?>  BETTER WORLD</p>
 
                 </div>
         
