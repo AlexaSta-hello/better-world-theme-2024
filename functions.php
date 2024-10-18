@@ -20,6 +20,17 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
+function mytheme_custom_logo_setup() {
+  add_theme_support( 'custom-logo', array(
+      'height'      => 100, 
+      'width'       => 200, 
+      'flex-height' => true, 
+      'flex-width'  => true, 
+  ));
+}
+add_action( 'after_setup_theme', 'mytheme_custom_logo_setup' );
+
+
 
 function register_my_widgets() {
 
@@ -43,15 +54,6 @@ add_action ('widgets_init', 'register_my_widgets');
   // Beitragsbilder aktivieren
 add_theme_support('post-thumbnails');
 
-// Block Template Parts im Customizer aktivieren:
-
-add_action( 'after_setup_theme', 'add_block_template_part_support' );
-
-function add_block_template_part_support() {
-
-    add_theme_support( 'block-template-parts' );
-
-}
 
 
 

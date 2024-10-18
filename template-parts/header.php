@@ -19,21 +19,28 @@
 
             <div class="my-header-content">
 
-                <a class="bloginfo" href="http://localhost:10013/"><?php bloginfo('title'); ?></a>
+                <div class="bloginfo">
+                    <?php 
+                        if ( function_exists( 'the_custom_logo' ) ) {
+                            the_custom_logo();  
+                        } else {
+                            bloginfo('title');  
+                        }
+                    ?>
+                </div>
+                
+               
 
                 <div class="nav-bar burger-menu">☰</div>
                  
                 <nav> 
-                    <div class="nav-bar main-nav">
+                    <div class="nav-bar">
                         <?php wp_nav_menu( array(
                             'theme_location' => 'header-menu',
                             'container_class' => 'my-header-menu') ); 
                             ?>
                     </div>           
-                </nav>
-
-                
-                 
+                </nav> 
 
             </div>
         </div>
@@ -41,7 +48,7 @@
 
     <script>
     document.querySelector('.burger-menu').addEventListener('click', function() {
-    var menu = document.querySelector('.main-nav');
+    var menu = document.querySelector('.my-header-menu');
     menu.classList.toggle('active');
     document.querySelector('.my-header').classList.toggle('active');
     });
