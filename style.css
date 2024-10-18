@@ -777,8 +777,8 @@ PAGE_ Leistungen */
     margin-bottom: 2.5em;
 }
 
-.page-einleitung h2.wp-block-heading {
-    color: var(--main-gray);
+.page-einleitung-h2 {
+    color: var(--main-gray) !important;
 }
 
 .leistungen-page h2 {

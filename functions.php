@@ -9,6 +9,16 @@ function register_my_styles () {
 
 add_action('wp_enqueue_scripts', 'register_my_styles');
 
+
+function remove_wpautop_on_pages() {
+  // Wenn es eine Seite ist oder die Front-Page
+  if ( is_page() || is_front_page() ) {
+      remove_filter( 'the_content', 'wpautop' );
+  }
+}
+// Hook in WordPress laden
+add_action('wp', 'remove_wpautop_on_pages');
+
 function register_my_menus() {
   register_nav_menus(
     array(
