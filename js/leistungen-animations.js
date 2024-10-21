@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                konzeptTextElement.classList.add('animated-right');
+                konzeptTextElement.classList.add('l-animated-right');
                 konzeptElement.classList.add('active');
             }
         });
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                webentwicklungTextElement.classList.add('animated-left');
+                webentwicklungTextElement.classList.add('l-animated-left');
                 webentwicklungElement.classList.add('active');
             }
         });
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                webdesignTextElement.classList.add('animated-right');
+                webdesignTextElement.classList.add('l-animated-right');
                 webdesignElement.classList.add('active');
             }
         });
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                seoTextElement.classList.add('animated-left');
+                seoTextElement.classList.add('l-animated-left');
                 seoElement.classList.add('active');
             }
         });
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                hoistingTextElement.classList.add('animated-right');
+                hoistingTextElement.classList.add('l-animated-right');
                 hoistingElement.classList.add('active');
             }
         });

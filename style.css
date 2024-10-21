@@ -38,9 +38,18 @@ body {
     
 }
 
+.wp-block-group__inner-container.is-layout-constrained {
+    display: inherit; 
+    flex-direction: inherit; 
+    justify-content: inherit; 
+    align-items: inherit; 
+    width: 100%; 
+}
+
 .custom-logo {
-    width: 80px;
+    width: 120px;
     height: auto;
+    padding-top: 10px;
 }
 
 
@@ -132,6 +141,17 @@ p {line-height: 1.5em;}
     h2, h3 {
         font-size: 22px;
     }
+
+    .wp-block-group__inner-container.is-layout-constrained {
+        display: inherit;
+        flex-wrap: inherit; 
+        flex-direction: inherit; 
+        justify-content: inherit; 
+        align-items: inherit; 
+        width: 100%; 
+        margin-left: inherit;
+        margin-right: inherit;
+    }
 } 
 
 @media only screen and (min-width: 992px) {
@@ -141,6 +161,17 @@ p {line-height: 1.5em;}
 
     h2, h3 {
         font-size: 30px;
+    }
+
+    .wp-block-group__inner-container.is-layout-constrained {
+        display: inherit;
+        flex-wrap: inherit; 
+        flex-direction: inherit; 
+        justify-content: inherit; 
+        align-items: inherit; 
+        width: 100%; 
+        margin-left: inherit;
+        margin-right: inherit;
     }
 
 }
@@ -690,6 +721,7 @@ about*/
 
 .about {
     background-color: var(--main-red);
+    position: relative;
     z-index: 5;
 }
 
@@ -711,6 +743,12 @@ PAGE
 .titel-section {
     height: 100vh;
     display: flex;
+    align-items: center;
+}
+
+.my-page {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -815,9 +853,6 @@ PAGE_ Leistungen */
  }
 
 
-
-/* wp- classes */
-
 .leistungen-page-container {
     display: flex;
     flex-wrap: wrap;
@@ -834,6 +869,36 @@ PAGE_ Leistungen */
     font-family: 'nunito sans';
     font-weight: 200; 
     margin-bottom: 0.7em;
+}
+
+@keyframes lvonlinks {
+    from {
+        left: -50px;
+        opacity: 0;
+    }
+    to {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes lvonrechts {
+    from {
+        right: -50px;
+        opacity: 0;
+    }
+    to {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+.l-animated-left {
+    animation: lvonlinks 1s ease-out forwards;
+}
+
+.l-animated-right {
+    animation: lvonrechts 1s ease-out forwards;
 }
 
 
@@ -918,6 +983,7 @@ PAGE - Contact */
 
 .wpcf7 {
     background-color: var(--main-violet);
+    width: 100%;
     padding: 3em 3em 1em 3em;
 }
 
@@ -1176,9 +1242,20 @@ img {
         margin-top: 0;
     }
 
+    .konzept-text p,
+    .webdesign-text p,
+    .hoisting-text p {
+        padding-right: 2em;
+    }
+
     .webentwicklung-text,
     .seo-text {
         margin-bottom: 0;
+    }
+
+    .webentwicklung-text p,
+    .seo-text p {
+        padding-left: 2em;
     }
 
 
@@ -1212,10 +1289,6 @@ img {
         position: relative;
         top: 4em;
     }
-
-    .wpcf7 {
-        width: 50%;
-    }
   
 }
 
@@ -1234,6 +1307,17 @@ img {
     .first-project {
         margin-bottom: 0;
         margin-right: 6%;
+    }
+
+    .wp-block-group__inner-container.is-layout-constrained {
+        display: inherit;
+        flex-wrap: inherit; 
+        flex-direction: inherit; 
+        justify-content: inherit; 
+        align-items: inherit; 
+        width: 100%; 
+        margin-left: inherit;
+        margin-right: inherit;
     }
    
 }
@@ -1280,6 +1364,17 @@ img {
         font-size: 90px !important;
         color: whitesmoke;
         margin-bottom: 0 !important;
+    }
+
+    .wp-block-group__inner-container.is-layout-constrained {
+        display: inherit;
+        flex-wrap: inherit; 
+        flex-direction: inherit; 
+        justify-content: inherit; 
+        align-items: inherit; 
+        width: 100%; 
+        margin-left: inherit;
+        margin-right: inherit;
     }
 
 

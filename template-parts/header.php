@@ -21,9 +21,9 @@
 
                 <div class="bloginfo">
                     <?php 
-                        if ( function_exists( 'the_custom_logo' ) ) {
+                         if ( function_exists( 'the_custom_logo' ) ) {
                             the_custom_logo();  
-                        } else {
+                        } else { 
                             bloginfo('title');  
                         }
                     ?>
