@@ -1245,7 +1245,7 @@ img {
     .konzept-text p,
     .webdesign-text p,
     .hoisting-text p {
-        padding-right: 2em;
+        padding-left: 2em;
     }
 
     .webentwicklung-text,
@@ -1255,7 +1255,7 @@ img {
 
     .webentwicklung-text p,
     .seo-text p {
-        padding-left: 2em;
+        padding-right: 2em;
     }
 
 
