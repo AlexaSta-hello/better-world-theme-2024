@@ -52,7 +52,6 @@ register_sidebar (array (
 ));
   
 
-// hier haben wir die <div>s mit "Gruppe" im WP-Backend gelöst.
 register_sidebar (array (
   'name'    => 'Sidebar Widgets',
   'id'      => 'side-widgets'
@@ -68,18 +67,21 @@ add_theme_support('post-thumbnails');
 
 
 // JS Datei für Animationen einbinden
-function enqueue_slogan_animations_script() {
-  wp_enqueue_script( 'slogan-animations', get_template_directory_uri() . '/js/slogan-animations.js', array(), null, true );
+/*function enqueue_slogan_animations_script() {
+  
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_slogan_animations_script' );
 
 function enqueue_slogan_projects_animations_script() {
+  
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_slogan_projects_animations_script' );*/
+
+function enqueue_meine_scripts() {
+  wp_enqueue_script( 'leistungen-animations', get_template_directory_uri() . '/js/leistungen-animations.js', array(), null, true );
+  wp_enqueue_script ('project-slider', get_template_directory_uri() . '/js/project-slider.js', array(), null, true);
+  wp_enqueue_script( 'slogan-animations', get_template_directory_uri() . '/js/slogan-animations.js', array(), null, true );
   wp_enqueue_script( 'slogan-projects-animations', get_template_directory_uri() . '/js/slogan-projects-animations.js', array(), null, true );
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_slogan_projects_animations_script' );
-
-function enqueue_leistungen_animations_script() {
-  wp_enqueue_script( 'leistungen-animations', get_template_directory_uri() . '/js/leistungen-animations.js', array(), null, true );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_leistungen_animations_script' );
+add_action( 'wp_enqueue_scripts', 'enqueue_meine_scripts' );
 

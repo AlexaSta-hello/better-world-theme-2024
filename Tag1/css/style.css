@@ -1,0 +1,174 @@
+/*Schriften einbinden*/
+@font-face {
+    font-family: 'Noto Sans regular';
+    src: url('../fonts/NotoSans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans bold';
+    src: url('../fonts/NotoSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+/* quantico-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Quantico';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/headline/quantico-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* quantico-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: 'Rasa bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Serifen_headline/rasa-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+
+/*Normalizer*/
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/*Layout */
+body{
+    /* Grundschrift*/
+    font-family: 'Noto Sans regular';
+    /*Grund - Schriftgröße*/
+    font-size: 1.25rem;
+    /*Grundschrift farbe nicht ganz schwarz - */
+    color: rgb(40, 39, 39);
+}
+
+h1, h2, h3 {
+    font-family: 'Rasa bold' ;
+}
+
+p{
+    line-height: 1.5;
+}
+
+section {
+    width: 70%;
+    margin: auto;
+}
+
+header {
+    background-image: url("../img/ukrainelandschaft.jpg");
+    height: 50vh;
+    background-repeat: no-repeat;
+    /* background-position: center 80%; */
+    background-size: 100%;
+    background-attachment: fixed; /*parallox effekt */
+    display: flex;
+    justify-content: center; /*horizontal in der mitte */
+    align-items: center; /* vertikal in der mitte */
+    
+
+
+}
+
+input {
+    width: 5rem;
+}
+
+
+/* Navigation*/
+
+nav {
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    list-style: none;
+    /* text-transform: uppercase; */
+
+}
+#navs {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
+	padding: 1rem;
+    position: relative; /*dadurch bekommt das kindelement(postition:absolute) den bezugspunkt vom elternelement und nicht von der ganzen seite, bei position absolute*/
+}
+
+#hamburgerId {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /*ausblenden*/
+    display: none;
+}
+
+
+a{
+    color: rgb(218 71 108);
+}
+
+
+#works article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/*mediaqueries */
+
+@media only screen and (max-width: 48rem) /* 768 px durch 16 gleich 48rem relatives maß */
+
+{
+    #works article {
+        display: block;
+        text-align: center;
+    }
+
+    #hamburgerId{
+        display:block; /*einblenden*/
+    }
+
+    .animation{
+        height: 0rem;
+        transition: height 2s ease-in;
+        overflow: hidden;
+        background-color: aqua;
+       
+        
+
+    }
+
+    nav, ul, li {
+        display: block;
+    }
+    
+    #navs{
+        display:block ;
+
+    }
+
+
+    .show{
+        height: 5rem;
+    }
+    
+    
+}
+

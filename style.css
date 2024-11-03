@@ -16,11 +16,11 @@ RESET
 --------------------*/
 
 :root {
-    --main-gray: rgb(70, 68, 70);
+    --main-gray: hsl(300, 1%, 27%);
     --main-red: red;
     --main-blue: hsl(240, 100%, 70%);
-    --main-orange: orange;
-    --main-violet: rgb(139, 92, 180);
+    --main-orange: #ffa500;
+    --main-violet: hsl(272, 37%, 53%);
 }
 
 html {
@@ -39,11 +39,15 @@ body {
 }
 
 .wp-block-group__inner-container.is-layout-constrained {
-    display: inherit; 
+    display: inherit;
     flex-direction: inherit; 
+    flex-wrap: inherit; 
     justify-content: inherit; 
     align-items: inherit; 
-    width: 100%; 
+    width: inherit;
+    max-width: inherit;
+    margin-left: inherit;
+    margin-right: inherit; 
 }
 
 .custom-logo {
@@ -64,7 +68,7 @@ h1 {
 
 h2, h3, .faq {
     color: hsl(300, 1%, 27%);
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-family: 'nunito sans', Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
@@ -103,6 +107,7 @@ p {line-height: 1.5em;}
 
 .wp-element-button {
     margin: auto;
+    margin-top: 100px;
     width: 250px;
     border-radius: 5px;
     display: flex;
@@ -131,7 +136,19 @@ p {line-height: 1.5em;}
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
+@media only screen and (min-width: 580px) {
+    .wp-block-group__inner-container.is-layout-constrained {
+        display: inherit;
+        flex-direction: inherit; 
+        flex-wrap: inherit; 
+        justify-content: inherit; 
+        align-items: inherit; 
+        width: inherit;
+        max-width: inherit;
+        margin-left: inherit;
+        margin-right: inherit; 
+    }
+}
 
 @media only screen and (min-width: 768px) {
     h1 {
@@ -144,13 +161,18 @@ p {line-height: 1.5em;}
 
     .wp-block-group__inner-container.is-layout-constrained {
         display: inherit;
-        flex-wrap: inherit; 
         flex-direction: inherit; 
+        flex-wrap: inherit; 
         justify-content: inherit; 
         align-items: inherit; 
-        width: 100%; 
+        width: inherit;
+        max-width: inherit;
         margin-left: inherit;
-        margin-right: inherit;
+        margin-right: inherit; 
+    }
+
+    .wp-block-buttons.is-content-justification-center {
+        justify-content: right;
     }
 } 
 
@@ -165,13 +187,14 @@ p {line-height: 1.5em;}
 
     .wp-block-group__inner-container.is-layout-constrained {
         display: inherit;
-        flex-wrap: inherit; 
         flex-direction: inherit; 
+        flex-wrap: inherit; 
         justify-content: inherit; 
         align-items: inherit; 
-        width: 100%; 
+        width: inherit;
+        max-width: inherit;
         margin-left: inherit;
-        margin-right: inherit;
+        margin-right: inherit; 
     }
 
 }
@@ -186,7 +209,7 @@ HEADER
 
 
 .my-header {
-    height: 75px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,8 +315,7 @@ HEADER
 
 
     .my-header-menu li:hover {
-        border: 1px solid whitesmoke;
-        background-color: rgb(84, 83, 83);
+        background-color: rgb(114, 114, 114);
 
         
     }
@@ -343,6 +365,10 @@ Footer - Part
     margin-bottom: 3em !important;
     align-items: flex-start;
     width: 100%;
+}
+
+.footer-item ul {
+    padding-left: 1em;
 }
 
 .my-footer h2,
@@ -409,20 +435,7 @@ Footer - Part
     font-size: 16px;
 }
 
-@media only screen and (min-width: 580px) {
 
-    .footer-container {
-        padding: 200px 5%;
-    }
-
-    .footer-items {
-        flex-direction: row;
-        
-    } 
-    
-    
-    
-}
 
 
 
@@ -449,14 +462,10 @@ Contact - Part
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 5%;
 }
 
-.contact-main-content {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .contact-main-content  h2.wp-block-heading,
 .contact-main-content h3 {
@@ -509,9 +518,7 @@ Contact - Part
     max-height: 100%;
 }
 
-.herz {
-    font-size: 100px;
-}
+
 
 
 
@@ -558,6 +565,7 @@ section {
 
 .banner {
     background-color: var(--main-blue);
+    height: 100vh;
 }
 
 
@@ -566,8 +574,15 @@ section {
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    align-items: center; 
+    padding: 2%; 
+    position: relative;
 } 
+
+.banner-wrapper .cta-button {
+    position: absolute;
+    bottom: 10%;
+}
 
 .video {
     margin-bottom: 100px;
@@ -594,7 +609,6 @@ section {
 
 
 .slogan h1 {
-    font-size: 30px;
     text-align: center;
     color: whitesmoke;
     font-style: italic; 
@@ -638,25 +652,96 @@ section {
     animation: vonrechts 1s ease-out forwards;
 }
 
+/* projects */
+
+.projects {
+    background-color: var(--main-blue);
+    position: relative;
+    z-index: 1;
+}
+
+.projects h2 {
+    font-size: 30px; 
+    color: var(--main-blue);
+}
+
+
+.projects-section-content {
+    width: 100%;
+    position: relative;
+}
+
+.next-buttons {
+    position: absolute;
+    right: 5%;
+    top: calc(50% - 24px);
+    
+}
+
+.next .wp-element-button {
+    margin-top: 0;
+    
+}
+
+
+.slider {
+    position: relative;
+}
+
+.slider div:not(div:first-child) {
+    display: none;
+}
+
+.wp-block-button.next {
+    width: 10px;
+    height: 10px;
+    
+    display: flex;
+    justify-content: center;
+   
+}
+.next .wp-block-button__link,
+.wpcf7-submit {
+    background-color: var(--main-red);
+    opacity: 0.9;
+    color: whitesmoke;
+    font-weight: 800;
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;
+}
+
+.wp-block-button__link:hover,
+.wpcf7-submit:hover {
+    background-color: rgb(113, 113, 113);
+    color: whitesmoke;
+}
+
 
 
 /*--- leistungen ---*/
 
 .leistungen {
-    background-color: var(--main-blue);
+    background-color: var(--main-orange);
+    position: relative;
+    z-index: 3;
 }
 
 .leistungen h2 {  
     font-size: 30px;
-    color: var(--main-blue);
+    color: var(--main-orange);
 }
 
+
+
+.sprechblase {
+    display: none;
+}
 
 
 .leistungen .text-field {
     line-height: 1.5em;
     color: hsl(300, 1%, 27%);
     width: 100%;
+    margin-bottom: 75px;
 }
 
 .leistungen-image {
@@ -669,51 +754,6 @@ section {
     line-height: 1.3em;
 }
 
-
-/* projects */
-
-.projects {
-    background-color: var(--main-orange);
-    position: relative;
-    z-index: 3;
-}
-
-.projects h2 {
-    font-size: 30px; 
-    color: var(--main-orange);
-}
-
-.projects-section-content {
-    width: 100%;
-}
-
-.projects-section-content h3 {
-    margin-bottom: 1em;
-}
-
-.projects-section-content p {
-    margin-bottom: 1em;
-}
-
-
-.beitrags-template {
-    width: 96%;
-}
-
-
-.beitrags-template li:hover {
-    transform: none;
-}
-
-
-.beitrags-template {
-    display: flex;
-    flex-wrap: wrap
-}
-
-.beitrags-template li {
-    width: 100%;
-}
 
 
 /*---------------
@@ -730,9 +770,7 @@ about*/
     color: var(--main-red);  
 }
 
-.about figure {
-    margin-bottom: 100px;
-}
+
 
 
 
@@ -752,7 +790,16 @@ PAGE
     align-items: center;
 }
 
+.p-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: whitesmoke;
+    padding: 5%;
+    margin-bottom: 0;
+}
+
 .my-page h1 {
+    position: relative;
     padding: 1em;
     font-size: 30px;   
     text-align: center;
@@ -761,11 +808,12 @@ PAGE
 
 
 .page-einleitung {
-    border-left: 4px solid var(--main-red);
-    border-bottom: 4px solid var(--main-red);
     padding: 2em;
     margin-bottom: 100px !important;
-    
+}
+
+.page-einleitung h2 {
+    color: var(--main-gray) !important;
 }
 
 .my-page h2.wp-block-heading:first-child {
@@ -778,11 +826,6 @@ PAGE
     margin: 0;
 }
 
-.wp-block-group ul {
-    position: relative;
-    left: 1em;
-}
-
 
 
 /* -------------
@@ -790,8 +833,8 @@ PAGE_ Leistungen */
 
 
 .leistungen-page h1 {
-    background-color: var(--main-blue);
-    box-shadow: 0.5em 0.5em var(--main-orange);
+    background-color: var(--main-orange);
+    box-shadow: 0.5em 0.5em var(--main-red);
 }
 
 .leistungen-page a {
@@ -802,56 +845,21 @@ PAGE_ Leistungen */
 
 .leistungen-page-item {
     width: 100%;
+    
 }
 
-.konzept-text,
-.webdesign-text,
-.hoisting-text {
-    margin-top: 2.5em;
+.leistungen-page .page-einleitung {
+    border-left: 15px solid var(--main-red);
 }
 
-.webentwicklung-text,
-.seo-text {
-    margin-bottom: 2.5em;
+.leistungen-page-item h2 {
+    color: var(--main-orange);
+    background-color: var(--main-gray);
+    display: inline;
+    padding: 0.3em 0.5em;
+    font-size: 30px;
+
 }
-
-.page-einleitung-h2 {
-    color: var(--main-gray) !important;
-}
-
-.leistungen-page h2 {
-    display: inline-block;
-    color: var(--main-blue);
-}
-
-.leistungen-page h2::after {
-   content: "";
-   display: block;
-   width: 0;
-   height: 2px;
-   background-color: var(--main-gray);
-   transition: all 1s;
-}
-.leistungen-konzept h2.active::after {
-   width: 60%;
-}
-
-.leistungen-webentwicklung h2.active::after {
-    width: 60%;
- }
-
- .leistungen-webdesign h2.active::after {
-    width: 60%;
- }
-
- .leistungen-seo h2.active::after {
-    width: 60%;
- }
-
- .leistungen-hoisting h2.active::after {
-    width: 60%;
- }
-
 
 .leistungen-page-container {
     display: flex;
@@ -863,13 +871,31 @@ PAGE_ Leistungen */
     margin-bottom: 5em;
 }
 
+.orange-box {
+    background-color: var(--main-orange);
+    padding: 2em;
+    margin: 4em 0 1.5em 0;
+    border-radius: 5px;
+}
 
-.leistungen-page-item-liste li {
+.leistungen-page-item-text ul {
+    position: relative;
+    left: 1em;
+    margin-bottom: 2em;
+    
+}
+
+
+.leistungen-page-item-text li {
     font-size: 20px;
     font-family: 'nunito sans';
     font-weight: 200; 
     margin-bottom: 0.7em;
 }
+
+.leistungen-page-item-bild {
+    display: none;
+} 
 
 @keyframes lvonlinks {
     from {
@@ -913,21 +939,18 @@ PAGE_ Projects */
     background-color: whitesmoke;
 }
 
-.p-container {
-    max-width: 1200px;
-    background-color: whitesmoke;
-    padding: 5%;
-    margin-bottom: 0;
-}
-
 .project-page .p-container h2{
-    color: var(--main-orange);
+    color: var(--main-blue);
 }
 
 .project-page h1 {
-    background-color: var(--main-orange);
+    background-color: var(--main-blue);
     align-self: flex-start;
-    box-shadow: 0.5em 0.5em var(--main-red); 
+    box-shadow: 0.5em 0.5em var(--main-orange); 
+}
+
+.project-page .page-einleitung {
+    border-left: 15px solid var(--main-orange);
 }
 
 .project-page-item {
@@ -939,29 +962,29 @@ PAGE_ Projects */
     opacity: 0.8;
 }
 
-.slogan-projects {
-    background-color: var(--main-blue);
+
+.beitrags-template {
+    width: 96%;
 }
 
 
-.slogan-projects h2 {
-    font-family: 'righteous', Arial, Helvetica, sans-serif;
-    font-style: italic;
-    text-align: center;
-    color: whitesmoke;
-    margin-bottom: 0;
-    font-size: 30px;
+.beitrags-template li:hover {
+    transform: none;
 }
 
-.schau {
-    position: relative;
-    opacity: 0;
+
+.beitrags-template {
+    display: flex;
+    flex-wrap: wrap
 }
 
-.inspiration {
-    position: relative;
-    opacity: 0;
+.beitrags-template li {
+    width: 100%;
 }
+
+.beitrags-template li:first-child {
+    margin-bottom: 4em;
+} 
 
 
 /*-------------
@@ -970,6 +993,41 @@ PAGE - About */
 .about-page h1 {
     background-color: var(--main-red);
     box-shadow: 0.5em 0.5em var(--main-violet);
+}
+
+.about-einleitung {
+    border-left: 15px solid var(--main-violet);
+    margin-bottom: 4em;
+}
+
+.about-page h3 {
+    margin-bottom: 1em;
+}
+
+.about-page a {
+    text-decoration: underline;
+    color: var(--main-gray);
+}
+
+.about-page .text-gruppe {
+    margin-bottom: 3em;
+}
+
+.about-page li {
+    font-family: 'nunito sans', Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 0.5em;
+    line-height: 1.5em;
+}
+
+.about-page ul {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+}
+
+.about-page p {
+    margin-bottom: 1em;
 }
 
 
@@ -1035,26 +1093,34 @@ img {
 .s-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .my-post .post-title {
     background-color: hsl(300, 1%, 27%);
-    color: #ffa500;
-    margin: 2em 0;
+    color: var(--main-blue);
+    font-size: 30px;
+    margin: 2em 0 1em 0;
+    padding: 0.5em;
 
 }
 
 .my-post-content {
-    width: 75%;
-    margin-right: 5%;
+    width: 100%;
 }
 
-.my-post-content img {
-    margin-bottom: 0.5em;
+.bild-container {
+    margin-bottom: 3em;
+}
+
+.my-post-content img,
+.my-post-content video {
+    margin-bottom: 1em;
 }
 
 .my-post-content h2 {
-    background-color: orange;
+    background-color: var(--main-blue);
+    color: whitesmoke;
     padding: 0.5em 1em;   
 }
 
@@ -1063,8 +1129,31 @@ img {
     margin-bottom: 5em;
 }
 
+.post-project-text > ul {
+    padding-left: 1.5em;
+    margin: 3em 0 1.5em 0;
+}
+
+
+
+.post-project-text li {
+    font-size: 20px;
+    color: var(--main-gray);
+    font-family: 'nunito sans';
+    font-weight: 200; 
+    margin-bottom: 0.7em;
+}
+
+.my-post-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--main-blue) !important;
+}
+
 .my-post-sidebar {
-    width: 20%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .my-post-sidebar > li {
@@ -1077,13 +1166,16 @@ img {
 }
 
 .wp-block-latest-posts li {
-    margin-top: 1.5em;
-    overflow: hidden;
+    margin-top: 1.5em; 
+    width: 100%;
     
 }
 
 .wp-block-latest-posts li img {
     transition: all 0.3s ease;
+    max-width: 100%; 
+    height: 250px; 
+    object-fit: cover;  
 }
 
 .wp-block-latest-posts li img:hover {
@@ -1096,7 +1188,24 @@ img {
 
 
 
+@media only screen and (min-width: 580px) {
 
+    .footer-container {
+        padding: 200px 5%;
+    }
+
+    .footer-items {
+        flex-direction: row;
+        
+    } 
+
+    .slogan h1 {
+        font-size: 30px;
+    }
+    
+    
+    
+}
 
 
 
@@ -1127,18 +1236,12 @@ img {
         animation-name: mymove;
         animation-duration: 1s;
         animation-fill-mode: forwards;
-        animation-timing-function:cubic-bezier(0.23, 1, 0.320, 1);   
+        animation-timing-function:ease-in;   
     }
 
     @keyframes mymove {
         from {top: 0px;}
         to {top: auto; transform: skewY(15deg);}
-    }
-
-
-    .leistungen .wp-element-button,
-    .projects .wp-element-button {
-        margin-left: auto;
     }
 
     
@@ -1151,16 +1254,30 @@ img {
     }
 
     .leistungen .text-field {
-        width: 50%;
-        margin: 0 !important;
+        width: 55%;
+        margin-left: 0 !important;
+        margin-bottom: 25px;
+    }
+
+    .leistungen-container {
+        position: relative;
+    }
+    
+    .sprechblase {
+        display: block;
+        width: 30%;
+        position: absolute;
+        top: 50px;
+        right: 40px;
     }
 
     .leistungen-image {
         display: inline;
-        width: 45%;
+        width: 35%;
         min-width: 250px;
         height: auto;
         margin: 0 !important;
+       
     }
 
     
@@ -1170,7 +1287,8 @@ img {
     }
 
     .beitrags-template li {
-        width: 48%;
+        width: 45%;
+        margin-bottom: 6em;
     }
 
     /* page-projects*/
@@ -1194,68 +1312,38 @@ img {
         top: -2em;  
     }
 
-    /* page-leistungen */
+    .contact-main-content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
 
-    .leistungen-page-item-content {
+    .my-post .post-title {
+        font-size: 50px;
+        margin: 1em 0 1em 0;
+        padding: 0.5em;
+    }
+
+    /*page-about*/
+
+    .about-einleitung {
         display: flex;
         justify-content: space-between;
-        gap: 10%;
+        align-items: flex-start;
     }
 
-    .leistungen-page-item-liste {
-        width: 40%;
-    }
-
-    .leistungen-page-item-text {
+    .about-page .about-text {
         width: 50%;
     }
-     
-     .leistungen-webentwicklung h2,
-     .leistungen-seo h2{
-        position: relative;
-        left: 64%;
-     } 
 
-     .leistungen-konzept h2.active::after {
-        width: 53%;
-     }
-
-     .leistungen-webentwicklung h2.active::after {
-         width: 45%;
-      }
-     
-      .leistungen-webdesign h2.active::after {
-         width: 31%;
-      }
-     
-      .leistungen-seo h2.active::after {
-         width: 46%;
-      }
-     
-      .leistungen-hoisting h2.active::after {
-         width: 83%;
-      }
-
-    .konzept-text,
-    .webdesign-text,
-    .hoisting-text {
-        margin-top: 0;
+    .about-page figure {
+        width: 40%;
+        
     }
 
-    .konzept-text p,
-    .webdesign-text p,
-    .hoisting-text p {
-        padding-left: 2em;
-    }
+    .about-page img {
+        object-fit: cover;
 
-    .webentwicklung-text,
-    .seo-text {
-        margin-bottom: 0;
-    }
-
-    .webentwicklung-text p,
-    .seo-text p {
-        padding-right: 2em;
     }
 
 
@@ -1263,13 +1351,20 @@ img {
 
 @media only screen and (min-width: 992px) {
 
-     h1 {
+    h1 {
         font-size: 50px;
     }
 
-    .my-page h1,
-    .my-post h1 {
+    .my-page h1 {
         font-size: 100px;
+    }
+
+   
+
+    .my-post .post-title {
+        font-size: 80px;
+        margin: 1em 0 1em 0;
+        padding: 0.5em;
     }
 
     .my-page h2.wp-block-heading:first-child {
@@ -1280,15 +1375,60 @@ img {
         top: 0;
     }
 
+    /* page-leistungen */
+
+    .leistungen-page-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5%;
+        margin-bottom: 6em;
+    }
+
     .leistungen-page-item-text {
-        width: 60%;
+        width: 50%;
+    }
+
+    .leistungen-page-item-bild {
+        opacity: 0;
+        display: block;
+        width: 45%;
+        padding-top: 1.5em;
+    }
+
+    /* page -about */
+
+    .about-page h3 {
+        font-size: 22px;
+        margin-bottom: 0.5em;
+    }
+
+     /* single */
+     .my-post-content {
+        width: 75%;
+        margin-right: 5%;
+    }
+
+    .my-post-sidebar {
+        width: 20%;
+    }
+
+    .wp-block-latest-posts li img {
+        transition: all 0.3s ease;
+        max-width: 150px; 
+        height: 150px; 
+         
+    }
+
+    .my-post h3 {
+        margin-top: 2em;
+        margin-bottom: 1.5em;
+    }
+
+    .my-post ul {
+        margin-top: 0em;
     }
     
-    .leistungen-page-item img {
-        display: block;
-        position: relative;
-        top: 4em;
-    }
   
 }
 
@@ -1302,6 +1442,10 @@ img {
     height: 300px;
     }
 
+    .sprechblase {
+        top: -50px;
+        right: 50px;
+    }
  
 
     .first-project {
@@ -1311,13 +1455,14 @@ img {
 
     .wp-block-group__inner-container.is-layout-constrained {
         display: inherit;
-        flex-wrap: inherit; 
         flex-direction: inherit; 
+        flex-wrap: inherit; 
         justify-content: inherit; 
         align-items: inherit; 
-        width: 100%; 
+        width: inherit;
+        max-width: inherit;
         margin-left: inherit;
-        margin-right: inherit;
+        margin-right: inherit; 
     }
    
 }
@@ -1368,13 +1513,14 @@ img {
 
     .wp-block-group__inner-container.is-layout-constrained {
         display: inherit;
-        flex-wrap: inherit; 
         flex-direction: inherit; 
+        flex-wrap: inherit; 
         justify-content: inherit; 
         align-items: inherit; 
-        width: 100%; 
+        width: inherit;
+        max-width: inherit;
         margin-left: inherit;
-        margin-right: inherit;
+        margin-right: inherit; 
     }
 
 

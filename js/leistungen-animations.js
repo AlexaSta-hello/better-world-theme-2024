@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const leistungenKonzeptSection = document.querySelector('.leistungen-konzept');
-    const konzeptTextElement = document.querySelector('.konzept-text');
-    const konzeptElement = leistungenKonzeptSection.querySelector('h2');
+    const konzeptElement = leistungenKonzeptSection.querySelector('.leistungen-page-item-bild');
 
     const observer3 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                konzeptTextElement.classList.add('l-animated-right');
-                konzeptElement.classList.add('active');
+                konzeptElement.classList.add('l-animated-right');
             }
         });
     }, {
@@ -20,15 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const leistungenWebentwicklungSection = document.querySelector('.leistungen-webentwicklung');
-    const webentwicklungTextElement = document.querySelector('.webentwicklung-text');
-    const webentwicklungElement = leistungenWebentwicklungSection.querySelector('h2');
+    const webentwicklungElement = leistungenWebentwicklungSection.querySelector('.leistungen-page-item-bild');
 
     const observer4 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                webentwicklungTextElement.classList.add('l-animated-left');
-                webentwicklungElement.classList.add('active');
+                webentwicklungElement.classList.add('l-animated-left');
             }
         });
     }, {
@@ -40,15 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const leistungenWebdesignSection = document.querySelector('.leistungen-webdesign');
-    const webdesignTextElement = document.querySelector('.webdesign-text');
-    const webdesignElement = leistungenWebdesignSection.querySelector('h2');
+    const webdesignElement = leistungenWebdesignSection.querySelector('.leistungen-page-item-bild');
 
     const observer5 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                webdesignTextElement.classList.add('l-animated-right');
-                webdesignElement.classList.add('active');
+                webdesignElement.classList.add('l-animated-right');
+            
             }
         });
     }, {
@@ -59,15 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const leistungenSeoSection = document.querySelector('.leistungen-seo');
-    const seoTextElement = document.querySelector('.seo-text');
-    const seoElement = leistungenSeoSection.querySelector('h2');
+    const seoElement = leistungenSeoSection.querySelector('.leistungen-page-item-bild');
 
     const observer6 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                seoTextElement.classList.add('l-animated-left');
-                seoElement.classList.add('active');
+                seoElement.classList.add('l-animated-left');
             }
         });
     }, {
@@ -78,15 +71,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const leistungenHoistingSection = document.querySelector('.leistungen-hoisting');
-    const hoistingTextElement = document.querySelector('.hoisting-text');
-    const hoistingElement = leistungenHoistingSection.querySelector('h2');
+    const hoistingElement = leistungenHoistingSection.querySelector('.leistungen-page-item-bild');
 
     const observer7 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Animationen hinzufügen, wenn der Slogan sichtbar wird
-                hoistingTextElement.classList.add('l-animated-right');
-                hoistingElement.classList.add('active');
+                hoistingElement.classList.add('l-animated-right');
             }
         });
     }, {
