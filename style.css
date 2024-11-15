@@ -19,7 +19,7 @@ RESET
     --main-gray: hsl(300, 1%, 27%);
     --main-red: red;
     --main-blue: hsl(240, 100%, 70%);
-    --main-orange: #ffa500;
+    --main-orange: #ffb718;
     --main-violet: hsl(272, 37%, 53%);
 }
 
@@ -62,7 +62,6 @@ h1 {
     font-weight: 800;
     color: hsl(300, 1%, 27%);
     text-transform: uppercase;
-    font-size: 22px;
     letter-spacing: 2px;
 }
 
@@ -73,13 +72,32 @@ h2, h3, .faq {
     font-weight: 400;
 }
 
-.faq {
-    margin-bottom: 0.5em;
+.my-page h1 {
+    font-size: 50px;
 }
 
-h3, .faq {
-    font-size: 20px;  
+
+
+.my-page h2 {
+    font-size: 30px;
 }
+
+.my-page .section-content h2,
+.fp-container h2 {
+    font-size: 40px;
+}
+
+.my-page h3 {
+    font-size: 24px;
+}
+
+
+
+.faq {
+    margin-bottom: 0.5em;
+    font-size: 20px;
+}
+
 
 .faq p {
     padding: 1em 2em ;
@@ -105,7 +123,8 @@ p {
 p {line-height: 1.5em;}
 
 
-.wp-element-button {
+.wp-element-button,
+.wpcf7-submit {
     margin: auto;
     margin-top: 100px;
     width: 250px;
@@ -114,8 +133,7 @@ p {line-height: 1.5em;}
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.wp-block-button__link,
-.wpcf7-submit {
+.wp-block-button__link {
     background-color: var(--main-gray);
     color: whitesmoke;
     font-weight: 400;
@@ -136,27 +154,14 @@ p {line-height: 1.5em;}
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media only screen and (min-width: 580px) {
-    .wp-block-group__inner-container.is-layout-constrained {
-        display: inherit;
-        flex-direction: inherit; 
-        flex-wrap: inherit; 
-        justify-content: inherit; 
-        align-items: inherit; 
-        width: inherit;
-        max-width: inherit;
-        margin-left: inherit;
-        margin-right: inherit; 
-    }
-}
 
 @media only screen and (min-width: 768px) {
     h1 {
         font-size: 30px;
     }
 
-    h2, h3 {
-        font-size: 22px;
+    .my-post h1 {
+        font-size: 80px;
     }
 
     .wp-block-group__inner-container.is-layout-constrained {
@@ -181,8 +186,21 @@ p {line-height: 1.5em;}
         font-size: 50px;
     }
 
-    h2, h3 {
-        font-size: 30px;
+    .my-page h1 {
+        font-size: 80px;
+    }
+    
+    .my-page h2 {
+        font-size: 50px;
+    }
+    
+    .my-page .section-content h2,
+    .fp-container h2 {
+        font-size: 60px;
+    }
+
+    .my-page h3 {
+        font-size: 40px;
     }
 
     .wp-block-group__inner-container.is-layout-constrained {
@@ -218,7 +236,7 @@ HEADER
     z-index: 10;
     width: 100%;
     padding: 1em 5%;
-    background-color: var(--main-gray);
+    background-color: var(--main-blue);
     
 }
 
@@ -341,6 +359,8 @@ Footer - Part
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 5;
 }
 
 .footer-container {
@@ -547,6 +567,7 @@ section {
 
 .fp-container {
     max-width: 1200px;
+    width: 100%;
     background-color: whitesmoke;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -591,19 +612,19 @@ section {
 
 /*--- slogan ---*/
 
-.slogan {
-    
-    background-color: red;
-    
-}
-
 .slogan-section {
+    background-color: red;
     width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 !important;
     height: 183px;
+    margin-bottom: 2em;
+}
+
+.startseite .slogan-section {
+    margin-bottom: 0 !important;
 }
 
 
@@ -661,7 +682,6 @@ section {
 }
 
 .projects h2 {
-    font-size: 30px; 
     color: var(--main-blue);
 }
 
@@ -671,38 +691,16 @@ section {
     position: relative;
 }
 
-.next-buttons {
-    position: absolute;
-    right: 5%;
-    top: calc(50% - 24px);
-    
-}
-
-.next .wp-element-button {
-    margin-top: 0;
-    
-}
-
-
-.slider {
-    position: relative;
-}
-
-.slider div:not(div:first-child) {
-    display: none;
-}
-
 .wp-block-button.next {
     width: 10px;
     height: 10px;
-    
     display: flex;
     justify-content: center;
-   
 }
+
 .next .wp-block-button__link,
 .wpcf7-submit {
-    background-color: var(--main-red);
+    background-color: var(--main-gray);
     opacity: 0.9;
     color: whitesmoke;
     font-weight: 800;
@@ -726,22 +724,17 @@ section {
 }
 
 .leistungen h2 {  
-    font-size: 30px;
     color: var(--main-orange);
 }
-
-
 
 .sprechblase {
     display: none;
 }
 
-
 .leistungen .text-field {
     line-height: 1.5em;
     color: hsl(300, 1%, 27%);
     width: 100%;
-    margin-bottom: 75px;
 }
 
 .leistungen-image {
@@ -766,10 +759,18 @@ about*/
 }
 
 .about h2 {
-    font-size: 30px;
     color: var(--main-red);  
 }
 
+.about-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-section figure {
+    max-width: 800px;
+    align-self: center;
+}
 
 
 
@@ -799,43 +800,56 @@ PAGE
 }
 
 .my-page h1 {
-    position: relative;
-    padding: 1em;
-    font-size: 30px;   
+    font-size: 50px;   
     text-align: center;
-    margin: 4em 0 4em 0;
+    font-style: normal;
+    color: whitesmoke; 
 }
 
+.banner {
+    background-color: var(--main-blue);
+}
 
-.page-einleitung {
-    padding: 2em;
-    margin-bottom: 100px !important;
+.banner h2 {
+    font-family: 'righteous', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+.my-page .fp-container {
+    padding-top: 75px;
 }
 
 .page-einleitung h2 {
     color: var(--main-gray) !important;
+    margin-bottom: 1em;
 }
 
-.my-page h2.wp-block-heading:first-child {
-    font-size: clamp(2.625rem, calc(2.625rem +((1vw - 0.48rem)* 8.4135)), 3.25rem);
+.page-einleitung {
+    margin-bottom: 3em;
+}
+
+.page-einleitung p {
+    font-size: 20px; 
+}
+
+
+.section-content {
+    font-size: 30px;
+}
+
+.trenner {
     width: 100%;
-    margin-left: 0 !important;
+    border-bottom: 1px solid var(--main-gray);
 }
-
-.wp-block-group {
-    margin: 0;
-}
-
-
 
 /* -------------
 PAGE_ Leistungen */
 
-
-.leistungen-page h1 {
+.leistungen-page {
     background-color: var(--main-orange);
-    box-shadow: 0.5em 0.5em var(--main-red);
 }
+
 
 .leistungen-page a {
     text-decoration: underline;
@@ -843,39 +857,46 @@ PAGE_ Leistungen */
     color: hsl(300, 1%, 27%);
 }
 
-.leistungen-page-item {
-    width: 100%;
-    
-}
-
-.leistungen-page .page-einleitung {
-    border-left: 15px solid var(--main-red);
-}
-
-.leistungen-page-item h2 {
-    color: var(--main-orange);
-    background-color: var(--main-gray);
-    display: inline;
-    padding: 0.3em 0.5em;
-    font-size: 30px;
-
-}
 
 .leistungen-page-container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 .leistungen-page-item {
-    margin-bottom: 5em;
+    width: 100%;
+    margin-bottom: 2em;
 }
 
-.orange-box {
-    background-color: var(--main-orange);
-    padding: 2em;
-    margin: 4em 0 1.5em 0;
-    border-radius: 5px;
+.leistungen-bereiche-h2 {
+    margin-bottom: 2em;
+}
+
+.leistungen-page-item-text h2 {
+    color: var(--main-orange);
+    display: inline;
+}
+
+
+.leistungen-page-item-text h3 { 
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid var(--main-gray);
+    margin-bottom: 0.75em;   
+}
+
+.leistungen-page-container p {
+    margin-bottom: 6em;
+}
+
+
+
+.leistungen-page-item-text li {
+    font-size: 20px;
+    font-family: 'nunito sans';
+    font-weight: 200; 
+    margin-bottom: 0.7em;
+
 }
 
 .leistungen-page-item-text ul {
@@ -891,6 +912,7 @@ PAGE_ Leistungen */
     font-family: 'nunito sans';
     font-weight: 200; 
     margin-bottom: 0.7em;
+
 }
 
 .leistungen-page-item-bild {
@@ -936,22 +958,48 @@ PAGE_ Projects */
 
 .project-page,
 .project-page .p-container {
-    background-color: whitesmoke;
-}
-
-.project-page .p-container h2{
-    color: var(--main-blue);
-}
-
-.project-page h1 {
     background-color: var(--main-blue);
-    align-self: flex-start;
-    box-shadow: 0.5em 0.5em var(--main-orange); 
 }
 
-.project-page .page-einleitung {
-    border-left: 15px solid var(--main-orange);
+
+
+.projects-section-content h2 {
+    color: var(--main-blue);
+    margin-bottom: 1em;
 }
+
+.project-page h3 a {
+    color: var(--main-gray);
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .project-page h3 a::before,
+  .project-page h3 a::after {
+   content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  .project-page h3 a::before {
+    background-color: var(--main-blue);
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+ 
+  .project-page h3 a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  .project-page h3 a:hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+
+
 
 .project-page-item {
     transition: all 0.3s ease;
@@ -962,46 +1010,47 @@ PAGE_ Projects */
     opacity: 0.8;
 }
 
-
-.beitrags-template {
-    width: 96%;
-}
-
-
 .beitrags-template li:hover {
     transform: none;
 }
 
 
-.beitrags-template {
-    display: flex;
-    flex-wrap: wrap
-}
-
 .beitrags-template li {
     width: 100%;
+    height: auto;
+    margin-bottom: 5em;
 }
 
-.beitrags-template li:first-child {
-    margin-bottom: 4em;
-} 
+.beitrags-template li:last-child {
+    margin-bottom: 0;
+}
+
+
+.font-projekte-page h2 {
+    font-family: 'righteous', Arial, Helvetica, sans-serif;
+    font-weight: 800;  
+}
+
+
+.wp-block-post-featured-image a {
+    height: auto;
+}
+
+.wp-block-group.portfolio-kategorie {
+    margin: 1em 0 5em 0;
+}
 
 
 /*-------------
 PAGE - About */
 
-.about-page h1 {
+.about-page {
     background-color: var(--main-red);
-    box-shadow: 0.5em 0.5em var(--main-violet);
 }
 
-.about-einleitung {
-    border-left: 15px solid var(--main-violet);
-    margin-bottom: 4em;
-}
-
-.about-page h3 {
-    margin-bottom: 1em;
+.about-page figure {
+    width: 60%;
+    margin-bottom: 2em;
 }
 
 .about-page a {
@@ -1009,9 +1058,11 @@ PAGE - About */
     color: var(--main-gray);
 }
 
-.about-page .text-gruppe {
-    margin-bottom: 3em;
+.about-page h3 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
 }
+
 
 .about-page li {
     font-family: 'nunito sans', Arial, Helvetica, sans-serif;
@@ -1026,40 +1077,87 @@ PAGE - About */
     padding-left: 1.5em;
 }
 
-.about-page p {
-    margin-bottom: 1em;
-}
 
 
 /*-------------
 PAGE - Contact */
 
-.contact-page h1 {
+
+.contact-page {
     background-color: var(--main-violet);
-    box-shadow: 0.5em 0.5em var(--main-blue);
+}
+
+.contact-page .page-einleitung {
+    margin-bottom: 0;
+}
+
+.contact-page .section-content figure {
+    display: none;
 }
 
 .wpcf7 {
-    background-color: var(--main-violet);
     width: 100%;
-    padding: 3em 3em 1em 3em;
+    margin-top: 3em;
 }
 
 .wpcf7 p {
-    color: whitesmoke;
-    
+    color: var(--main-violet);
+    font-weight: 400;
 }
 
 .wpcf7 input,
 .wpcf7-textarea {
     border-radius: 3px;
     border: none;
+    height: 50px;
+    width: 100%;
+    margin-top: 0.5em;
+    padding: 1em;
 }
+
 
 .wpcf7-submit {
     margin-top: 4em;
+    width: 250px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.wpcf7 form .wpcf7-response-output {
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'nunito sans', Arial;
+    font-weight: 400px;
+    font-size: 18px;
+    color: var(--main-gray);
+}
+
+
+
+/*----------------
+PAGE Impressum */
+
+.impressum-page h1 {
+    box-shadow: none;
+    margin: 0.5em;
+}
+
+.impressum-page {
+    color: var(--main-gray);
+}
+
+
+
+/*----------------
+PAGE Datenschutz */
+
+.daten-page h1 {
+    box-shadow: none;
+    margin: 0.5em;
+}
 
 
 
@@ -1110,6 +1208,7 @@ img {
 }
 
 .bild-container {
+    padding: 5%;
     margin-bottom: 3em;
 }
 
@@ -1187,7 +1286,6 @@ img {
 }
 
 
-
 @media only screen and (min-width: 580px) {
 
     .footer-container {
@@ -1198,12 +1296,6 @@ img {
         flex-direction: row;
         
     } 
-
-    .slogan h1 {
-        font-size: 30px;
-    }
-    
-    
     
 }
 
@@ -1220,47 +1312,24 @@ img {
         height: 260px;
     }
 
-    .slogan h1,
-    .leistungen h2,
-    .projects h2,
-    .about h2,
-    .slogan-container-projects h2{  
-        font-size: 50px;
-        line-height: 1.3em;
+    .page-einleitung p {
+        font-size: 24px;
     }
-
-    .my-page h1 {
-        margin: 2em 0 3em 0;
-        transform: skewY(0deg);
-        position: relative;
-        animation-name: mymove;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-        animation-timing-function:ease-in;   
-    }
-
-    @keyframes mymove {
-        from {top: 0px;}
-        to {top: auto; transform: skewY(15deg);}
-    }
-
-    
 
     .leistungen-content {
         width: 100%;
         display: flex;
         justify-content: space-between;
+    }
 
+    .leistungen-page-container {
+        margin-top: 5em;
     }
 
     .leistungen .text-field {
         width: 55%;
         margin-left: 0 !important;
         margin-bottom: 25px;
-    }
-
-    .leistungen-container {
-        position: relative;
     }
     
     .sprechblase {
@@ -1275,48 +1344,21 @@ img {
         display: inline;
         width: 35%;
         min-width: 250px;
-        height: auto;
-        margin: 0 !important;
-       
+        height: 100%;
+        margin: 0 !important; 
     }
 
-    
-    .beitrags-template {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .beitrags-template li {
-        width: 45%;
-        margin-bottom: 6em;
-    }
 
     /* page-projects*/
 
-    .my-page .mytitle {
-        margin-top: 30vh;
-    }
-    
-    .my-page h1,
-    .my-post h1 {
-        font-size: 80px;
-        padding: 0.5em;
+    .projects-section-content h2 {
+        margin-bottom: 2em;
     }
 
-    .projects-wp-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 1%;
-        position: relative;
-        top: -2em;  
+    .wp-block-group.portfolio-kategorie {
+        margin: 3em 0 5em 0;
     }
 
-    .contact-main-content {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-    }
 
     .my-post .post-title {
         font-size: 50px;
@@ -1338,37 +1380,66 @@ img {
 
     .about-page figure {
         width: 40%;
-        
     }
 
     .about-page img {
         object-fit: cover;
-
     }
 
+    .about-einleitung p,
+    .hard-facts p {
+    font-size: 24px;
+    margin-bottom: 3em;
+    }
+
+    .leistungen-content h3 {
+        font-size: 24px;
+    }
+
+    /* page-contact*/
+    
+    .contact-page .section-content {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact-page .section-content figure {
+        display: inline;
+        width: 35%;
+    }
+    
+    .wpcf7 {
+        width: 55%;
+        margin-top: 3em;
+    }
 
 }
 
 @media only screen and (min-width: 992px) {
 
-    h1 {
+
+    .daten-page h2 {
+        font-size: 30px;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .daten-page h3 {
+        font-size: 24px;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .web h1 {
         font-size: 50px;
     }
-
-    .my-page h1 {
-        font-size: 100px;
-    }
-
-   
 
     .my-post .post-title {
         font-size: 80px;
         margin: 1em 0 1em 0;
         padding: 0.5em;
-    }
-
-    .my-page h2.wp-block-heading:first-child {
-        width: 50%;
     }
 
     .projects-wp-content {
@@ -1382,11 +1453,14 @@ img {
         justify-content: space-between;
         align-items: center;
         gap: 5%;
-        margin-bottom: 6em;
     }
 
     .leistungen-page-item-text {
         width: 50%;
+    }
+
+    .leistungen-page-item-text h3 { 
+       font-size: 24px; 
     }
 
     .leistungen-page-item-bild {
@@ -1396,12 +1470,6 @@ img {
         padding-top: 1.5em;
     }
 
-    /* page -about */
-
-    .about-page h3 {
-        font-size: 22px;
-        margin-bottom: 0.5em;
-    }
 
      /* single */
      .my-post-content {
@@ -1438,6 +1506,18 @@ img {
         max-width: 75%;
     }
 
+    .my-page h1 {
+        font-size: 100px;
+    }
+
+    .web h1 {
+        font-size: 50px;
+    }
+
+    .leistungen-content h3 {
+        font-size: 30px;
+    }
+
     .project-thumbnail-box {
     height: 300px;
     }
@@ -1453,17 +1533,6 @@ img {
         margin-right: 6%;
     }
 
-    .wp-block-group__inner-container.is-layout-constrained {
-        display: inherit;
-        flex-direction: inherit; 
-        flex-wrap: inherit; 
-        justify-content: inherit; 
-        align-items: inherit; 
-        width: inherit;
-        max-width: inherit;
-        margin-left: inherit;
-        margin-right: inherit; 
-    }
    
 }
 
@@ -1491,7 +1560,7 @@ img {
         position: sticky;
         top: 0;
         transform: rotate(-90deg) translateX(-125%)
-            translateY(-485px);
+            translateY(-450px);
         transform-origin: left top;
         z-index: 4; 
     }
@@ -1509,19 +1578,47 @@ img {
         font-size: 90px !important;
         color: whitesmoke;
         margin-bottom: 0 !important;
+        font-family: 'righteous', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
-    .wp-block-group__inner-container.is-layout-constrained {
-        display: inherit;
-        flex-direction: inherit; 
-        flex-wrap: inherit; 
-        justify-content: inherit; 
-        align-items: inherit; 
-        width: inherit;
-        max-width: inherit;
-        margin-left: inherit;
-        margin-right: inherit; 
+    .font-page {
+        position: sticky;
+        top: 0;
+        transform: rotate(-90deg) translateX(-120%)
+            translateY(-435px);
+        transform-origin: left top;
+        z-index: 2; 
     }
+
+    .font-projekte-page {
+        position: sticky;
+        top: 20%;
+        transform: rotate(-90deg) translateX(-95%)
+            translateY(-445px);
+        transform-origin: left top;
+    }
+
+    .font-about-page {
+        position: sticky;
+        top: 0;
+        transform: rotate(-90deg) translateX(-125%)
+            translateY(-460px);
+        transform-origin: left top;
+        z-index: 2; 
+    }
+
+    .font-contact-page {
+        position: sticky;
+        top: 0;
+        transform: rotate(-90deg) translateX(-130%)
+            translateY(-495px);
+        transform-origin: left top;
+        z-index: 2; 
+    }
+
 
 
 

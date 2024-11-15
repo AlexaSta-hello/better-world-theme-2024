@@ -82,6 +82,7 @@ function enqueue_meine_scripts() {
   wp_enqueue_script ('project-slider', get_template_directory_uri() . '/js/project-slider.js', array(), null, true);
   wp_enqueue_script( 'slogan-animations', get_template_directory_uri() . '/js/slogan-animations.js', array(), null, true );
   wp_enqueue_script( 'slogan-projects-animations', get_template_directory_uri() . '/js/slogan-projects-animations.js', array(), null, true );
+  wp_enqueue_script( 'leistungen-slider', get_template_directory_uri() . '/js/leistungen-slider.js', array(), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_meine_scripts' );
 
