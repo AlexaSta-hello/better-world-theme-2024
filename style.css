@@ -3,7 +3,7 @@
 Theme Name: BetterWorld
 Text Domain: BetterWorld
 Version: 1.0
-Description: Clean mini brand & local studio theme
+Description: Modern colorful Portfolio Theme
 Tags: modern, pop aesthetic, bold typography
 Author: Alexandra Staszewski
 Author URI: #
@@ -333,7 +333,7 @@ HEADER
 
 
     .my-header-menu li:hover {
-        background-color: rgb(114, 114, 114);
+        padding-top: 1.3em;
 
         
     }
